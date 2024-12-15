@@ -7,8 +7,8 @@ from sqlalchemy import Float, String
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.sql import func
 
-from ..database import Base
-from ..schemas.video import VideoStatus
+from app.database import Base
+from app.schemas.video import VideoStatus
 
 
 class Video(Base):
@@ -17,4 +17,5 @@ class Video(Base):
     raw_url = Column(String)
     highlight_url = Column(String, nullable=True)
     status = Column(SQLAlchemyEnum(VideoStatus))
+    file_signature = Column(String, index=True)
     highlights = Column(JSONB, default=list)  # Store array of highlights

@@ -1,4 +1,5 @@
 # main.py
+import hashlib
 import logging
 import uuid
 from pathlib import Path
@@ -14,6 +15,16 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
+def calculate_file_signature(file_path: str) -> str:
+    """Calculate SHA-256 hash of file"""
+    sha256_hash = hashlib.sha256()
+    with open(file_path, "rb") as f:
+        # Read file in chunks to handle large files
+        for byte_block in iter(lambda: f.read(4096), b""):
+            sha256_hash.update(byte_block)
+    return sha256_hash.hexdigest()
+
+
 def upload_video(file_path: str) -> str:
     """
     Upload video to S3 and create DB entry
@@ -21,13 +32,30 @@ def upload_video(file_path: str) -> str:
     """
     s3 = S3Storage()
     db = SessionLocal()
+
+    # Calculate file signature
+    file_signature = calculate_file_signature(file_path)
+
+    # Check if video with same signature exists
+    existing_video = (
+        db.query(Video).filter(Video.file_signature == file_signature).first()
+    )
+    if existing_video:
+        logger.info(f"Duplicate video detected. Existing video ID: {existing_video.id}")
+        return existing_video.id
+
     video_id = str(uuid.uuid4())
 
     try:
         logger.info(f"Uploading video {video_id}")
         s3_url = s3.upload_video(file_path, video_id)
 
-        video = Video(id=video_id, raw_url=s3_url, status=VideoStatus.PENDING)
+        video = Video(
+            id=video_id,
+            raw_url=s3_url,
+            status=VideoStatus.PENDING,
+            file_signature=file_signature,  # Add signature to video record
+        )
         db.add(video)
         db.commit()
 
