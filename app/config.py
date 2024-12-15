@@ -6,9 +6,7 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     # Database
-    DATABASE_URL: str = (
-        "postgresql://sportsclips:sportsclips@videos.c5wwqagcq4e8.us-east-1.rds.amazonaws.com:5432/videos"
-    )
+    DATABASE_URL: str
 
     # AWS
     AWS_ACCESS_KEY: SecretStr

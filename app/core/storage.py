@@ -25,9 +25,26 @@ class S3Storage:
             raise
 
     def download_video(self, video_id: str, destination: str):
-        key = f"downloads/{video_id}.mp4"
+        key = f"raw/{video_id}.mp4"
         try:
             self.s3.download_file(self.bucket, key, destination)
         except Exception as e:
             print(f"Download failed: {e}")
+            raise
+
+    def upload_highlights(self, file_path: str, video_id: str) -> str:
+        key = f"highlights/{video_id}.mp4"
+        try:
+            self.s3.upload_file(file_path, self.bucket, key)
+            return f"s3://{self.bucket}/{key}"
+        except Exception as e:
+            print(f"Highlights upload failed: {e}")
+            raise
+
+    def download_highlights(self, video_id: str, destination: str):
+        key = f"highlights/{video_id}.mp4"
+        try:
+            self.s3.download_file(self.bucket, key, destination)
+        except Exception as e:
+            print(f"Highlights download failed: {e}")
             raise
