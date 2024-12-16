@@ -132,7 +132,7 @@ if __name__ == "__main__":
                 raise ValueError("--id required for extracting highlights")
 
             shortlist_highlights(args.id)
-            extract_highlights()
+            extract_highlights()  # LLM
 
             print(f"Shortlisted highlights for video ID: {args.id}")
 
