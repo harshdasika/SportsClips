@@ -155,20 +155,20 @@ dmypy.json
 cython_debug/
 
 # Ignore contents of media folders but not the folders themselves
-app/media/images/*
-!app/media/images/.gitkeep
+app/data/images/*
+!app/data/images/.gitkeep
 
-app/media/videos/*
-!app/media/videos/.gitkeep
+app/data/videos/*
+!app/data/videos/.gitkeep
 
-app/media/audios/*
-!app/media/audios/.gitkeep
+app/data/audios/*
+!app/data/audios/.gitkeep
 
-app/media/games/*
-!app/media/games/.gitkeep
+app/data/games/*
+!app/data/games/.gitkeep
 
-app/media/highlights/*
-!app/media/highlights/.gitkeep
+app/data/highlights/*
+!app/data/highlights/.gitkeep
 
 # PyCharm
 #.idea/

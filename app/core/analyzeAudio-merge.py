@@ -3,6 +3,7 @@ import librosa
 import numpy as np
 import ffmpeg
 import subprocess
+import json
 from typing import List, Tuple
 
 
@@ -76,14 +77,6 @@ class AudioExcitementDetector:
                                   hop_length: int) -> List[Tuple[float, float]]:
         """
         Find continuous segments of high excitement based on scores.
-
-        Args:
-            scores (np.ndarray): Excitement scores over time.
-            sr (int): Sample rate of the audio.
-            hop_length (int): Number of samples between successive frames.
-
-        Returns:
-            List[Tuple[float, float]]: List of start and end times of exciting moments.
         """
         segments = []
         start_time = None
@@ -113,34 +106,27 @@ class AudioExcitementDetector:
 def extract_audio_as_mp3(video_file: str, output_file: str) -> None:
     """
     Extract audio directly as MP3 from a video file using ffmpeg.
-
-    Args:
-        video_file (str): Path to the video file.
-        output_file (str): Path to save the extracted MP3 file.
     """
     try:
         output_dir = os.path.dirname(output_file)
         os.makedirs(output_dir, exist_ok=True)
 
-        # Run ffmpeg to extract audio in MP3 format
         ffmpeg.input(video_file).output(output_file, acodec='libmp3lame').run(overwrite_output=True)
         print(f"Audio extracted as MP3 to {output_file}")
     except ffmpeg.Error as e:
         print(f"Error extracting audio as MP3: {e}")
 
 
-def extract_highlight_clips(video_file: str, segments: List[Tuple[float, float]], output_dir: str) -> None:
+def extract_highlight_clips(video_file: str, segments: List[Tuple[float, float]], output_dir: str) -> List[dict]:
     """
     Extract highlight clips from a video based on provided timestamps.
-
-    Args:
-        video_file (str): Path to the video file.
-        segments (List[Tuple[float, float]]): List of start and end times for highlights.
-        output_dir (str): Directory to save the extracted clips.
-
     Adds a 2-second buffer before and after each segment.
+
+    Returns:
+        List[dict]: List of metadata with start times and clip filenames.
     """
     os.makedirs(output_dir, exist_ok=True)
+    metadata = []
 
     for i, (start, end) in enumerate(segments, 1):
         # Add a 2-second buffer to the start and end times
@@ -159,6 +145,13 @@ def extract_highlight_clips(video_file: str, segments: List[Tuple[float, float]]
         subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f"Extracted clip: {output_file}")
 
+        # Add metadata for this clip
+        metadata.append({
+            "start_time": start,
+            "highlight_file": f"highlight_{i}.mp4"
+        })
+
+    return metadata
 
 def merge_close_segments(segments: List[Tuple[float, float]], gap_threshold: float = 4.0) -> List[Tuple[float, float]]:
     """
@@ -188,7 +181,55 @@ def merge_close_segments(segments: List[Tuple[float, float]], gap_threshold: flo
 
     return merged_segments
 
+def save_metadata_to_json(metadata: List[dict], output_file: str) -> None:
+    """
+    Save metadata to a JSON file.
 
+    Args:
+        metadata (List[dict]): List of metadata dictionaries.
+        output_file (str): Path to the JSON file.
+    """
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    with open(output_file, "w") as f:
+        json.dump(metadata, f, indent=4)
+    print(f"Metadata saved to {output_file}")
+
+
+
+if __name__ == "__main__":
+    # File paths
+    base_dir = os.path.abspath(os.path.dirname(__file__))  # Directory of the current script
+    project_dir = os.path.join(base_dir, "../../")          # Project root directory
+
+    # Define file paths relative to the project directory
+    video_file = os.path.join(project_dir, "app/data/games/celtics-knicks.mp4")
+    mp3_file = os.path.join(project_dir, "app/data/audios/extractedAudio.mp3")
+    highlights_dir = os.path.join(project_dir, "app/data/highlights/")
+    metadata_file = os.path.join(project_dir, "app/data/json/highlight_metadata.json")
+
+    # Step 1: Extract audio as MP3
+    extract_audio_as_mp3(video_file, mp3_file)
+
+    # Step 2: Detect exciting moments
+    detector = AudioExcitementDetector()
+    exciting_moments = detector.detect_excitement(mp3_file)
+
+    # Step 3: Merge close segments
+    merged_moments = merge_close_segments(exciting_moments, gap_threshold=4.0)
+
+    # Step 4: Print merged timestamps
+    print(f"Found {len(merged_moments)} merged exciting moments:")
+    for start, end in merged_moments:
+        print(f"Excitement from {start:.1f}s to {end:.1f}s")
+
+    # Step 5: Extract highlight clips with buffer
+    highlight_metadata = extract_highlight_clips(video_file, merged_moments, highlights_dir)
+
+    # Step 6: Save metadata to JSON
+    save_metadata_to_json(highlight_metadata, metadata_file)
+
+
+"""
 if __name__ == "__main__":
     # Resolve the base directory of the project dynamically
     base_dir = os.path.abspath(os.path.dirname(__file__))  # Directory of the current script
@@ -221,7 +262,7 @@ if __name__ == "__main__":
     # Step 5: Extract highlight clips with buffer
     extract_highlight_clips(video_file, merged_moments, highlights_dir)
 
-"""
+
 if __name__ == "__main__":
     # File paths
     video_file = "/Users/harshdasika/Desktop/celtics-knicks.mp4"
