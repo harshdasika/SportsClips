@@ -83,12 +83,12 @@ def take_snapshots(video_file: str, output_dir: str, duration: float, clip_index
     return snapshots
 
 
-def save_image_metadata(metadata: List[Dict], output_file: str) -> None:
+def save_image_metadata(metadata: Dict[str, List[str]], output_file: str) -> None:
     """
     Save the image metadata to a JSON file.
 
     Args:
-        metadata (List[Dict]): List of dictionaries containing image metadata.
+        metadata (Dict[str, List[str]]): Dictionary containing image metadata.
         output_file (str): Path to save the JSON file.
     """
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
@@ -112,7 +112,7 @@ if __name__ == "__main__":
         print("No highlight metadata to process.")
         exit(1)
 
-    image_metadata = []
+    image_metadata = {}
 
     # Process each highlight clip
     for clip_index, entry in enumerate(highlight_metadata, 1):
@@ -129,10 +129,7 @@ if __name__ == "__main__":
         snapshots = take_snapshots(highlight_file, images_dir, duration, clip_index)
 
         # Add to image metadata
-        clip_metadata = {"start_time": start_time}
-        for i, snapshot in enumerate(snapshots, 1):
-            clip_metadata[f"image_{i}"] = snapshot
-        image_metadata.append(clip_metadata)
+        image_metadata[str(start_time)] = snapshots
 
     # Save image metadata to JSON
     save_image_metadata(image_metadata, output_metadata_file)
