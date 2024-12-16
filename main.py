@@ -1,34 +1,24 @@
-# main.py
 import hashlib
 import logging
+import os
 import uuid
-from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
 
+from app.core.extractAudio import extract_audio, extract_video_without_audio
 from app.core.storage import S3Storage
-
-# from app.core.audio import AudioExcitementDetector
 from app.database import SessionLocal
 from app.models.video import Video
 from app.schemas.video import VideoStatus
+from utils import calculate_file_signature
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def calculate_file_signature(file_path: str) -> str:
-    """Calculate SHA-256 hash of file"""
-    sha256_hash = hashlib.sha256()
-    with open(file_path, "rb") as f:
-        # Read file in chunks to handle large files
-        for byte_block in iter(lambda: f.read(4096), b""):
-            sha256_hash.update(byte_block)
-    return sha256_hash.hexdigest()
-
-
 def upload_video(file_path: str) -> str:
     """
-    Upload video to S3 and create DB entry
-    Returns video_id
+    Upload raw video to S3, split audio/video in parallel, upload extracted files,
+    and save paths to DB. Returns video ID.
     """
     s3 = S3Storage()
     db = SessionLocal()
@@ -36,7 +26,7 @@ def upload_video(file_path: str) -> str:
     # Calculate file signature
     file_signature = calculate_file_signature(file_path)
 
-    # Check if video with same signature exists
+    # Check for duplicates
     existing_video = (
         db.query(Video).filter(Video.file_signature == file_signature).first()
     )
@@ -44,81 +34,71 @@ def upload_video(file_path: str) -> str:
         logger.info(f"Duplicate video detected. Existing video ID: {existing_video.id}")
         return existing_video.id
 
+    # Generate video ID and paths
     video_id = str(uuid.uuid4())
+    raw_video_name = os.path.basename(file_path)
+    raw_video_local = f"local_storage/{raw_video_name}"
+    split_audio_local = f"local_storage/{video_id}_split_audio.m4a"
+    split_video_local = f"local_storage/{video_id}_split_video.mp4"
 
+    # Ensure local_storage directory exists
+    os.makedirs("local_storage", exist_ok=True)
+
+    # Copy video to local_storage
+    os.system(f"cp '{file_path}' '{raw_video_local}'")
+
+    def upload_raw():
+        """Upload raw video to S3."""
+        logger.info("Uploading raw video to S3...")
+        return s3.upload_raw_video(raw_video_local, video_id)
+
+    def process_audio():
+        """Extract audio and upload to S3."""
+        logger.info("Extracting audio...")
+        extract_audio(raw_video_local, split_audio_local)
+        logger.info("Uploading audio to S3...")
+        return s3.upload_split_audio(split_audio_local, video_id)
+
+    def process_video():
+        """Extract video without audio and upload to S3."""
+        logger.info("Extracting video without audio...")
+        extract_video_without_audio(raw_video_local, split_video_local)
+        logger.info("Uploading video to S3...")
+        return s3.upload_split_video(split_video_local, video_id)
+
+    # Run tasks in parallel
+    with ThreadPoolExecutor() as executor:
+        futures = {
+            "raw": executor.submit(upload_raw),
+            "audio": executor.submit(process_audio),
+            "video": executor.submit(process_video),
+        }
+
+        # Collect results
+        results = {key: future.result() for key, future in futures.items()}
+
+    # Save video entry to database
     try:
-        logger.info(f"Uploading video {video_id}")
-        s3_url = s3.upload_video(file_path, video_id)
-
         video = Video(
             id=video_id,
-            raw_url=s3_url,
+            raw_url=results["raw"],
             status=VideoStatus.PENDING,
-            file_signature=file_signature,  # Add signature to video record
+            file_signature=file_signature,
+            highlights=[],
         )
         db.add(video)
         db.commit()
 
-        logger.info(f"Upload complete: {video_id}")
+        logger.info(f"Upload complete for video ID: {video_id}")
         return video_id
 
     except Exception as e:
-        logger.error(f"Upload failed: {e}")
+        logger.error(f"Error saving video to database: {e}")
         raise
 
 
-# def process_video(video_id: str):
-#     """
-#     Process already uploaded video
-#     """
-#     s3 = S3Storage()
-#     db = SessionLocal()
-#     audio_detector = AudioExcitementDetector()
-
-#     try:
-#         # Get video from DB
-#         video = db.query(Video).filter(Video.id == video_id).first()
-#         if not video:
-#             raise ValueError(f"Video {video_id} not found")
-
-#         # Update status
-#         video.status = VideoStatus.PROCESSING
-#         db.commit()
-
-#         # Download from S3 to temp file
-#         temp_path = f"/tmp/{video_id}.mp4"
-#         logger.info(f"Downloading video to {temp_path}")
-#         s3.download_video(video_id, temp_path)
-
-#         # Process audio
-#         logger.info("Analyzing audio...")
-#         exciting_moments = audio_detector.detect_excitement(temp_path)
-
-#         # Update video with results
-#         video.highlights = [
-#             {"start_time": start, "end_time": end, "excitement_score": score}
-#             for start, end, score in exciting_moments
-#         ]
-#         video.status = VideoStatus.COMPLETED
-#         db.commit()
-
-#         logger.info(f"Processing complete: found {len(exciting_moments)} highlights")
-
-#     except Exception as e:
-#         logger.error(f"Processing failed: {e}")
-#         video.status = VideoStatus.FAILED
-#         db.commit()
-#         raise
-#     finally:
-#         # Cleanup
-#         if Path(temp_path).exists():
-#             Path(temp_path).unlink()
-
-
 def check_status(video_id: str) -> dict:
-    """
-    Check video processing status
-    """
+    """Check video processing status."""
     db = SessionLocal()
     video = db.query(Video).filter(Video.id == video_id).first()
     if not video:
@@ -135,9 +115,15 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Video Highlight Generator")
-    parser.add_argument("action", choices=["upload", "process", "status"])
-    parser.add_argument("--file", help="Path to video file for upload")
-    parser.add_argument("--video-id", help="Video ID for processing or status check")
+    parser.add_argument(
+        "action", choices=["upload", "extract", "shortlist", "create", "status"]
+    )
+    parser.add_argument(
+        "--id", help="Video ID for extraction, shortlisting, creation, or status check"
+    )
+    parser.add_argument(
+        "--file", help="Path to video file for upload (required for 'upload')"
+    )
 
     args = parser.parse_args()
 
@@ -148,17 +134,21 @@ if __name__ == "__main__":
             video_id = upload_video(args.file)
             print(f"Uploaded video ID: {video_id}")
 
-        # elif args.action == "process":
-        #     if not args.video_id:
-        #         raise ValueError("--video-id required for processing")
-        #     process_video(args.video_id)
-        #     print("Processing complete")
+        elif args.action == "shortlist":
+            if not args.id:
+                raise ValueError("--id required for shortlisting highlights")
+            print(f"Shortlisted highlights for video ID: {args.id}")
+
+        elif args.action == "create":
+            if not args.id:
+                raise ValueError("--id required for highlight creation")
+            print(f"Highlight reel created for video ID: {args.id}")
 
         elif args.action == "status":
-            if not args.video_id:
-                raise ValueError("--video-id required for status check")
-            status = check_status(args.video_id)
-            print(f"Status: {status}")
+            if not args.id:
+                raise ValueError("--id required for status check")
+            status = check_status(args.id)
+            print(f"Status for video ID {args.id}: {status}")
 
     except Exception as e:
         logger.error(f"Error: {e}")
