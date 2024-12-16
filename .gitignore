@@ -175,3 +175,6 @@ app/data/highlights/*
 
 # Local storage
 local_storage/
+.DS_Store
+app/.DS_Store
+app/data/.DS_Store
