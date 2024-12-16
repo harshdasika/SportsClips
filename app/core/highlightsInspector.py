@@ -283,6 +283,22 @@ EXPLANATION: <one sentence justification>"""
             raise
 
 
+def extract_highlights():
+    images_dir = "app/data/images"
+    input_json = "app/data/json/image_metadata.json"
+    output_json = "app/data/json/highlight_analysis.json"
+
+    analyzer = HighlightSequenceAnalyzer(
+        images_dir=images_dir, debug=True, max_workers=2
+    )
+
+    try:
+        results = analyzer.process_dataset(input_json, output_json)
+    except Exception as e:
+        print(f"Fatal error: {str(e)}")
+        exit(1)
+
+
 def main():
     images_dir = "app/data/images"
     input_json = "app/data/json/image_metadata.json"

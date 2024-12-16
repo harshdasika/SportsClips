@@ -6,6 +6,8 @@ from concurrent.futures import ThreadPoolExecutor
 
 from app.core.analyzeAudio import shortlist_highlights
 from app.core.extractAudio import extract_audio
+from app.core.highlightsInspector import extract_highlights
+from app.core.highlightStitcher import create_highlight_reel
 from app.core.storage import S3Storage
 from app.database import SessionLocal
 from app.models.video import Video
@@ -108,9 +110,7 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Video Highlight Generator")
-    parser.add_argument(
-        "action", choices=["upload", "extract", "shortlist", "create", "status"]
-    )
+    parser.add_argument("action", choices=["upload", "extract", "create", "status"])
     parser.add_argument(
         "--id", help="Video ID for extraction, shortlisting, creation, or status check"
     )
@@ -127,16 +127,20 @@ if __name__ == "__main__":
             video_id = upload_video(args.file)
             print(f"Uploaded video ID: {video_id}")
 
-        elif args.action == "shortlist":
+        elif args.action == "extract":
             if not args.id:
-                raise ValueError("--id required for shortlisting highlights")
+                raise ValueError("--id required for extracting highlights")
 
             shortlist_highlights(args.id)
+            extract_highlights()
+
             print(f"Shortlisted highlights for video ID: {args.id}")
 
         elif args.action == "create":
             if not args.id:
                 raise ValueError("--id required for highlight creation")
+
+            create_highlight_reel(args.id)
             print(f"Highlight reel created for video ID: {args.id}")
 
         elif args.action == "status":

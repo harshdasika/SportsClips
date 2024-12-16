@@ -136,8 +136,13 @@ def extract_highlight_clips(
     video_file: str, segments: List[Tuple[float, float]], output_dir: str
 ) -> List[dict]:
     """
-    Extract highlight clips from a video based on provided timestamps.
-    Adds a 2-second buffer before and after each segment.
+    Extract highlight clips from a video based on provided timestamps with optimized FFmpeg settings.
+    Adds a 2-second buffer before and after each segment while maintaining quality and performance.
+
+    Args:
+        video_file: Path to the input video file
+        segments: List of (start_time, end_time) tuples in seconds
+        output_dir: Directory to save extracted clips
 
     Returns:
         List[dict]: List of metadata with start times and clip filenames.
@@ -146,28 +151,92 @@ def extract_highlight_clips(
     metadata = []
 
     for i, (start, end) in enumerate(segments, 1):
-        # Add a 2-second buffer to the start and end times
-        buffered_start = max(0, start - 2)  # Ensure start doesn't go below 0
+        # Add buffer while ensuring start doesn't go below 0
+        buffered_start = max(0, start - 2)
         buffered_end = end + 2
+        duration = buffered_end - buffered_start
 
         output_file = os.path.join(output_dir, f"highlight_{i}.mp4")
-        command = [
+
+        # Two-pass approach for more reliable seeking
+        # First, create an accurate cut with copied streams
+        temp_file = os.path.join(output_dir, f"temp_{i}.ts")
+
+        first_pass = [
             "ffmpeg",
-            "-i",
-            video_file,
+            "-y",
             "-ss",
             str(buffered_start),
-            "-to",
-            str(buffered_end),
+            "-i",
+            video_file,
+            "-t",
+            str(duration),
             "-c",
-            "copy",
+            "copy",  # Copy streams without re-encoding
+            "-avoid_negative_ts",
+            "1",
+            temp_file,
+        ]
+
+        # Second pass: re-encode the accurately cut segment
+        second_pass = [
+            "ffmpeg",
+            "-y",
+            "-i",
+            temp_file,
+            "-c:v",
+            "libx264",
+            "-preset",
+            "medium",
+            "-crf",
+            "23",
+            "-movflags",
+            "+faststart",
+            "-vsync",
+            "1",
+            "-af",
+            "aresample=async=1:min_hard_comp=0.100000",  # Handle audio sync
+            "-c:a",
+            "aac",
+            "-b:a",
+            "128k",
+            "-ac",
+            "2",
             output_file,
         ]
-        subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        print(f"Extracted clip: {output_file}")
 
-        # Add metadata for this clip
-        metadata.append({"start_time": start, "highlight_file": f"highlight_{i}.mp4"})
+        try:
+            # First pass - accurate cutting
+            subprocess.run(
+                first_pass, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True
+            )
+
+            # Second pass - re-encoding
+            subprocess.run(
+                second_pass, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True
+            )
+
+            # Clean up temporary file
+            if os.path.exists(temp_file):
+                os.remove(temp_file)
+
+            print(f"Successfully extracted clip: {output_file}")
+
+            metadata.append(
+                {
+                    "start_time": start,
+                    "end_time": end,
+                    "highlight_file": os.path.basename(output_file),
+                }
+            )
+
+        except subprocess.CalledProcessError as e:
+            print(f"Error extracting clip {i}:")
+            print(f"Error message: {e.stderr.decode('utf-8')}")
+            # Clean up temporary file if it exists
+            if os.path.exists(temp_file):
+                os.remove(temp_file)
+            continue
 
     return metadata
 

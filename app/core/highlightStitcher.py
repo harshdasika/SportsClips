@@ -1,7 +1,9 @@
-import os
 import json
+import os
 import subprocess
 from typing import List
+
+from app.core.storage import S3Storage
 
 
 def read_highlight_analysis(file_path: str) -> List[dict]:
@@ -73,11 +75,15 @@ def stitch_highlights(highlight_files: List[str], output_file: str) -> None:
         # Run ffmpeg to concatenate the videos
         command = [
             "ffmpeg",
-            "-f", "concat",
-            "-safe", "0",
-            "-i", list_file,
-            "-c", "copy",
-            output_file
+            "-f",
+            "concat",
+            "-safe",
+            "0",
+            "-i",
+            list_file,
+            "-c",
+            "copy",
+            output_file,
         ]
         subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f"Highlight reel created at {output_file}")
@@ -88,15 +94,40 @@ def stitch_highlights(highlight_files: List[str], output_file: str) -> None:
         print(f"Error stitching highlights: {e}")
 
 
-if __name__ == "__main__":
-    # File paths
+def create_highlight_reel(id: str):
     base_dir = os.path.abspath(os.path.dirname(__file__))  # Current script directory
-    project_dir = os.path.join(base_dir, "../../")         # Project root directory
+    project_dir = os.path.join(base_dir, "../../")  # Project root directory
+
+    s3 = S3Storage()
 
     json_file = os.path.join(project_dir, "app/data/json/highlight_analysis.json")
     highlights_dir = os.path.join(project_dir, "app/data/highlights/")
     reels_dir = os.path.join(project_dir, "app/data/reels/")
-    
+
+    os.makedirs(reels_dir, exist_ok=True)
+    output_file = os.path.join(reels_dir, f"{id}_highlightReel.mp4")
+
+    # Read the highlight analysis JSON
+    sequences = read_highlight_analysis(json_file)
+
+    # Filter and map highlight files
+    highlight_files = get_highlight_files(sequences, highlights_dir)
+
+    # Stitch together the highlights
+    stitch_highlights(highlight_files, output_file)
+
+    s3.upload_highlights(output_file, id)
+
+
+if __name__ == "__main__":
+    # File paths
+    base_dir = os.path.abspath(os.path.dirname(__file__))  # Current script directory
+    project_dir = os.path.join(base_dir, "../../")  # Project root directory
+
+    json_file = os.path.join(project_dir, "app/data/json/highlight_analysis.json")
+    highlights_dir = os.path.join(project_dir, "app/data/highlights/")
+    reels_dir = os.path.join(project_dir, "app/data/reels/")
+
     os.makedirs(reels_dir, exist_ok=True)
     output_file = os.path.join(reels_dir, "highlightReel.mp4")
 
