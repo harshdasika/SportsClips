@@ -1,21 +1,25 @@
 import os
-import librosa
-import numpy as np
-import ffmpeg
 import subprocess
 from typing import List, Tuple
+
+import ffmpeg
+import librosa
+import numpy as np
 
 
 class AudioExcitementDetector:
     """
     Class to analyze audio and detect moments of excitement based on specific features.
     """
+
     def __init__(self):
         # Configurable parameters
         self.sample_rate = 22050  # Audio sample rate for loading
         self.hop_length = 512  # Number of samples between successive frames
         self.excitement_threshold = 0.5  # Minimum score to consider a moment exciting
-        self.min_excitement_duration = 1.5  # Minimum duration (seconds) for a segment to qualify as exciting
+        self.min_excitement_duration = (
+            1.5  # Minimum duration (seconds) for a segment to qualify as exciting
+        )
 
     def detect_excitement(self, audio_file: str) -> List[Tuple[float, float]]:
         """
@@ -31,27 +35,33 @@ class AudioExcitementDetector:
         y, sr = librosa.load(audio_file, sr=self.sample_rate)
 
         # Compute the Mel spectrogram and convert it to dB scale
-        mel_spec = librosa.feature.melspectrogram(y=y, sr=sr, hop_length=self.hop_length)
+        mel_spec = librosa.feature.melspectrogram(
+            y=y, sr=sr, hop_length=self.hop_length
+        )
         mel_db = librosa.power_to_db(mel_spec, ref=np.max)
 
         # Calculate features indicating excitement:
-        high_freq_energy = np.mean(mel_db[40:], axis=0)  # Energy in higher frequency bands
-        contrast = librosa.feature.spectral_contrast(y=y, sr=sr, hop_length=self.hop_length)
+        high_freq_energy = np.mean(
+            mel_db[40:], axis=0
+        )  # Energy in higher frequency bands
+        contrast = librosa.feature.spectral_contrast(
+            y=y, sr=sr, hop_length=self.hop_length
+        )
         contrast_mean = np.mean(contrast, axis=0)  # Average spectral contrast
-        rms = librosa.feature.rms(y=y, hop_length=self.hop_length)[0]  # Root Mean Square (RMS) energy
+        rms = librosa.feature.rms(y=y, hop_length=self.hop_length)[
+            0
+        ]  # Root Mean Square (RMS) energy
 
         # Combine features into an excitement score (weighted average)
         excitement_score = (
-            0.4 * self._normalize(high_freq_energy) +
-            0.3 * self._normalize(contrast_mean) +
-            0.3 * self._normalize(rms)
+            0.4 * self._normalize(high_freq_energy)
+            + 0.3 * self._normalize(contrast_mean)
+            + 0.3 * self._normalize(rms)
         )
 
         # Identify continuous excitement segments
         excited_segments = self._find_excitement_segments(
-            excitement_score,
-            sr,
-            self.hop_length
+            excitement_score, sr, self.hop_length
         )
 
         return excited_segments
@@ -70,10 +80,9 @@ class AudioExcitementDetector:
         max_val = np.max(array)
         return (array - min_val) / (max_val - min_val)
 
-    def _find_excitement_segments(self,
-                                  scores: np.ndarray,
-                                  sr: int,
-                                  hop_length: int) -> List[Tuple[float, float]]:
+    def _find_excitement_segments(
+        self, scores: np.ndarray, sr: int, hop_length: int
+    ) -> List[Tuple[float, float]]:
         """
         Find continuous segments of high excitement based on scores.
 
@@ -123,13 +132,17 @@ def extract_audio_as_mp3(video_file: str, output_file: str) -> None:
         os.makedirs(output_dir, exist_ok=True)
 
         # Run ffmpeg to extract audio in MP3 format
-        ffmpeg.input(video_file).output(output_file, acodec='libmp3lame').run(overwrite_output=True)
+        ffmpeg.input(video_file).output(output_file, acodec="libmp3lame").run(
+            overwrite_output=True
+        )
         print(f"Audio extracted as MP3 to {output_file}")
     except ffmpeg.Error as e:
         print(f"Error extracting audio as MP3: {e}")
 
 
-def extract_highlight_clips(video_file: str, segments: List[Tuple[float, float]], output_dir: str) -> None:
+def extract_highlight_clips(
+    video_file: str, segments: List[Tuple[float, float]], output_dir: str
+) -> None:
     """
     Extract highlight clips from a video based on provided timestamps.
 
@@ -150,17 +163,23 @@ def extract_highlight_clips(video_file: str, segments: List[Tuple[float, float]]
         output_file = os.path.join(output_dir, f"highlight_{i}.mp4")
         command = [
             "ffmpeg",
-            "-i", video_file,
-            "-ss", str(buffered_start),
-            "-to", str(buffered_end),
-            "-c", "copy",
-            output_file
+            "-i",
+            video_file,
+            "-ss",
+            str(buffered_start),
+            "-to",
+            str(buffered_end),
+            "-c",
+            "copy",
+            output_file,
         ]
         subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f"Extracted clip: {output_file}")
 
 
-def merge_close_segments(segments: List[Tuple[float, float]], gap_threshold: float = 4.0) -> List[Tuple[float, float]]:
+def merge_close_segments(
+    segments: List[Tuple[float, float]], gap_threshold: float
+) -> List[Tuple[float, float]]:
     """
     Merge consecutive excitement segments if they occur within a specified gap threshold.
 
@@ -203,7 +222,8 @@ if __name__ == "__main__":
     exciting_moments = detector.detect_excitement(mp3_file)
 
     # Step 3: Merge close segments
-    merged_moments = merge_close_segments(exciting_moments, gap_threshold=4.0)
+    GAP_THRESHOLD = 4.0  # seconds
+    merged_moments = merge_close_segments(exciting_moments, gap_threshold=GAP_THRESHOLD)
 
     # Step 4: Print merged timestamps
     print(f"Found {len(merged_moments)} merged exciting moments:")

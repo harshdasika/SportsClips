@@ -14,9 +14,7 @@ class Settings(BaseSettings):
     AWS_REGION: str = "us-east-1"
     S3_BUCKET: str = "sports-clips-videos"
 
-    # Audio Processing
-    SAMPLE_RATE: int = 22050
-    HOP_LENGTH: int = 512
+    OLLAMA_API_URL: str = "http://localhost:11434"
 
     class Config:
         env_file = ".env"  # Load variables from .env file
