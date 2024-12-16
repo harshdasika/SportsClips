@@ -8,6 +8,7 @@ import ffmpeg
 import librosa
 import numpy as np
 
+from app.core.analyzeImages import extract_frames
 from app.core.storage import S3Storage
 
 
@@ -277,6 +278,8 @@ def shortlist_highlights(video_id: str):
     # Save metadata to JSON
     logger.info("Saving highlight metadata")
     save_metadata_to_json(highlight_metadata, metadata_file)
+
+    extract_frames(metadata_file)
 
     # Clean up local files
     # logger.info("Cleaning up temporary files")

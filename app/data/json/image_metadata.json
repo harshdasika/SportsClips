@@ -1,5 +1,5 @@
 {
-    "1.18421768707483": [
+    "1.3235374149659864": [
         "highlight_1_1s.jpg",
         "highlight_1_2s.jpg",
         "highlight_1_3s.jpg",
@@ -7,29 +7,27 @@
         "highlight_1_5s.jpg",
         "highlight_1_6s.jpg"
     ],
-    "15.51092970521542": [
+    "9.404081632653062": [
         "highlight_2_1s.jpg",
         "highlight_2_2s.jpg",
         "highlight_2_3s.jpg",
         "highlight_2_4s.jpg",
-        "highlight_2_5s.jpg",
-        "highlight_2_6s.jpg",
-        "highlight_2_7s.jpg",
-        "highlight_2_8s.jpg",
-        "highlight_2_9s.jpg",
-        "highlight_2_10s.jpg",
-        "highlight_2_11s.jpg",
-        "highlight_2_12s.jpg"
+        "highlight_2_5s.jpg"
     ],
-    "55.10095238095238": [
+    "16.555827664399093": [
         "highlight_3_1s.jpg",
         "highlight_3_2s.jpg",
         "highlight_3_3s.jpg",
         "highlight_3_4s.jpg",
         "highlight_3_5s.jpg",
-        "highlight_3_6s.jpg"
+        "highlight_3_6s.jpg",
+        "highlight_3_7s.jpg",
+        "highlight_3_8s.jpg",
+        "highlight_3_9s.jpg",
+        "highlight_3_10s.jpg",
+        "highlight_3_11s.jpg"
     ],
-    "61.46321995464853": [
+    "55.10095238095238": [
         "highlight_4_1s.jpg",
         "highlight_4_2s.jpg",
         "highlight_4_3s.jpg",
@@ -38,27 +36,31 @@
         "highlight_4_6s.jpg",
         "highlight_4_7s.jpg",
         "highlight_4_8s.jpg",
-        "highlight_4_9s.jpg"
+        "highlight_4_9s.jpg",
+        "highlight_4_10s.jpg",
+        "highlight_4_11s.jpg",
+        "highlight_4_12s.jpg",
+        "highlight_4_13s.jpg",
+        "highlight_4_14s.jpg",
+        "highlight_4_15s.jpg"
     ],
-    "108.43718820861677": [
+    "90.81324263038549": [
         "highlight_5_1s.jpg",
         "highlight_5_2s.jpg",
         "highlight_5_3s.jpg",
         "highlight_5_4s.jpg",
-        "highlight_5_5s.jpg",
-        "highlight_5_6s.jpg",
-        "highlight_5_7s.jpg",
-        "highlight_5_8s.jpg"
+        "highlight_5_5s.jpg"
     ],
-    "121.97442176870749": [
+    "109.38920634920635": [
         "highlight_6_1s.jpg",
         "highlight_6_2s.jpg",
         "highlight_6_3s.jpg",
         "highlight_6_4s.jpg",
         "highlight_6_5s.jpg",
-        "highlight_6_6s.jpg"
+        "highlight_6_6s.jpg",
+        "highlight_6_7s.jpg"
     ],
-    "129.8227664399093": [
+    "129.84598639455783": [
         "highlight_7_1s.jpg",
         "highlight_7_2s.jpg",
         "highlight_7_3s.jpg",
@@ -80,7 +82,7 @@
         "highlight_8_7s.jpg",
         "highlight_8_8s.jpg"
     ],
-    "197.97333333333333": [
+    "203.61578231292518": [
         "highlight_9_1s.jpg",
         "highlight_9_2s.jpg",
         "highlight_9_3s.jpg",
@@ -98,14 +100,9 @@
         "highlight_9_15s.jpg",
         "highlight_9_16s.jpg",
         "highlight_9_17s.jpg",
-        "highlight_9_18s.jpg",
-        "highlight_9_19s.jpg",
-        "highlight_9_20s.jpg",
-        "highlight_9_21s.jpg",
-        "highlight_9_22s.jpg",
-        "highlight_9_23s.jpg"
+        "highlight_9_18s.jpg"
     ],
-    "229.85433106575962": [
+    "230.0865306122449": [
         "highlight_10_1s.jpg",
         "highlight_10_2s.jpg",
         "highlight_10_3s.jpg",
@@ -113,14 +110,14 @@
         "highlight_10_5s.jpg",
         "highlight_10_6s.jpg"
     ],
-    "241.46430839002267": [
+    "241.44108843537416": [
         "highlight_11_1s.jpg",
         "highlight_11_2s.jpg",
         "highlight_11_3s.jpg",
         "highlight_11_4s.jpg",
         "highlight_11_5s.jpg"
     ],
-    "318.763537414966": [
+    "318.55455782312924": [
         "highlight_12_1s.jpg",
         "highlight_12_2s.jpg",
         "highlight_12_3s.jpg",
@@ -129,7 +126,8 @@
         "highlight_12_6s.jpg",
         "highlight_12_7s.jpg",
         "highlight_12_8s.jpg",
-        "highlight_12_9s.jpg"
+        "highlight_12_9s.jpg",
+        "highlight_12_10s.jpg"
     ],
     "338.2915192743764": [
         "highlight_13_1s.jpg",
@@ -138,7 +136,7 @@
         "highlight_13_4s.jpg",
         "highlight_13_5s.jpg"
     ],
-    "366.15546485260774": [
+    "367.5486621315193": [
         "highlight_14_1s.jpg",
         "highlight_14_2s.jpg",
         "highlight_14_3s.jpg",
@@ -149,8 +147,7 @@
         "highlight_14_8s.jpg",
         "highlight_14_9s.jpg",
         "highlight_14_10s.jpg",
-        "highlight_14_11s.jpg",
-        "highlight_14_12s.jpg"
+        "highlight_14_11s.jpg"
     ],
     "394.7392290249433": [
         "highlight_15_1s.jpg",
@@ -201,10 +198,9 @@
         "highlight_18_10s.jpg",
         "highlight_18_11s.jpg",
         "highlight_18_12s.jpg",
-        "highlight_18_13s.jpg",
-        "highlight_18_14s.jpg"
+        "highlight_18_13s.jpg"
     ],
-    "472.6421768707483": [
+    "472.66539682539684": [
         "highlight_19_1s.jpg",
         "highlight_19_2s.jpg",
         "highlight_19_3s.jpg",
@@ -215,19 +211,21 @@
         "highlight_19_8s.jpg",
         "highlight_19_9s.jpg",
         "highlight_19_10s.jpg",
-        "highlight_19_11s.jpg",
-        "highlight_19_12s.jpg",
-        "highlight_19_13s.jpg"
+        "highlight_19_11s.jpg"
     ],
-    "579.8719274376417": [
+    "599.4927891156462": [
         "highlight_20_1s.jpg",
         "highlight_20_2s.jpg",
         "highlight_20_3s.jpg",
         "highlight_20_4s.jpg",
         "highlight_20_5s.jpg",
-        "highlight_20_6s.jpg"
+        "highlight_20_6s.jpg",
+        "highlight_20_7s.jpg",
+        "highlight_20_8s.jpg",
+        "highlight_20_9s.jpg",
+        "highlight_20_10s.jpg"
     ],
-    "599.9571882086168": [
+    "635.8552380952381": [
         "highlight_21_1s.jpg",
         "highlight_21_2s.jpg",
         "highlight_21_3s.jpg",
@@ -235,60 +233,60 @@
         "highlight_21_5s.jpg",
         "highlight_21_6s.jpg",
         "highlight_21_7s.jpg",
-        "highlight_21_8s.jpg",
-        "highlight_21_9s.jpg",
-        "highlight_21_10s.jpg"
+        "highlight_21_8s.jpg"
     ],
-    "617.6043537414967": [
+    "662.9993650793651": [
         "highlight_22_1s.jpg",
         "highlight_22_2s.jpg",
         "highlight_22_3s.jpg",
         "highlight_22_4s.jpg",
-        "highlight_22_5s.jpg"
+        "highlight_22_5s.jpg",
+        "highlight_22_6s.jpg",
+        "highlight_22_7s.jpg",
+        "highlight_22_8s.jpg",
+        "highlight_22_9s.jpg",
+        "highlight_22_10s.jpg",
+        "highlight_22_11s.jpg"
     ],
-    "635.808798185941": [
+    "682.9917460317461": [
         "highlight_23_1s.jpg",
         "highlight_23_2s.jpg",
         "highlight_23_3s.jpg",
         "highlight_23_4s.jpg",
-        "highlight_23_5s.jpg",
-        "highlight_23_6s.jpg",
-        "highlight_23_7s.jpg",
-        "highlight_23_8s.jpg",
-        "highlight_23_9s.jpg"
+        "highlight_23_5s.jpg"
     ],
-    "662.1402267573696": [
+    "695.391201814059": [
         "highlight_24_1s.jpg",
         "highlight_24_2s.jpg",
         "highlight_24_3s.jpg",
         "highlight_24_4s.jpg",
         "highlight_24_5s.jpg",
         "highlight_24_6s.jpg",
-        "highlight_24_7s.jpg",
-        "highlight_24_8s.jpg",
-        "highlight_24_9s.jpg",
-        "highlight_24_10s.jpg",
-        "highlight_24_11s.jpg",
-        "highlight_24_12s.jpg"
+        "highlight_24_7s.jpg"
     ],
-    "682.945306122449": [
+    "706.5367800453515": [
         "highlight_25_1s.jpg",
         "highlight_25_2s.jpg",
         "highlight_25_3s.jpg",
         "highlight_25_4s.jpg",
-        "highlight_25_5s.jpg"
+        "highlight_25_5s.jpg",
+        "highlight_25_6s.jpg",
+        "highlight_25_7s.jpg",
+        "highlight_25_8s.jpg",
+        "highlight_25_9s.jpg",
+        "highlight_25_10s.jpg",
+        "highlight_25_11s.jpg",
+        "highlight_25_12s.jpg",
+        "highlight_25_13s.jpg"
     ],
-    "695.0893424036282": [
+    "727.1560997732427": [
         "highlight_26_1s.jpg",
         "highlight_26_2s.jpg",
         "highlight_26_3s.jpg",
         "highlight_26_4s.jpg",
-        "highlight_26_5s.jpg",
-        "highlight_26_6s.jpg",
-        "highlight_26_7s.jpg",
-        "highlight_26_8s.jpg"
+        "highlight_26_5s.jpg"
     ],
-    "706.5367800453515": [
+    "737.1406802721089": [
         "highlight_27_1s.jpg",
         "highlight_27_2s.jpg",
         "highlight_27_3s.jpg",
@@ -301,16 +299,30 @@
         "highlight_27_10s.jpg",
         "highlight_27_11s.jpg",
         "highlight_27_12s.jpg",
-        "highlight_27_13s.jpg"
+        "highlight_27_13s.jpg",
+        "highlight_27_14s.jpg",
+        "highlight_27_15s.jpg"
     ],
-    "727.1328798185941": [
+    "756.0185034013606": [
         "highlight_28_1s.jpg",
         "highlight_28_2s.jpg",
         "highlight_28_3s.jpg",
         "highlight_28_4s.jpg",
-        "highlight_28_5s.jpg"
+        "highlight_28_5s.jpg",
+        "highlight_28_6s.jpg",
+        "highlight_28_7s.jpg",
+        "highlight_28_8s.jpg",
+        "highlight_28_9s.jpg",
+        "highlight_28_10s.jpg",
+        "highlight_28_11s.jpg",
+        "highlight_28_12s.jpg",
+        "highlight_28_13s.jpg",
+        "highlight_28_14s.jpg",
+        "highlight_28_15s.jpg",
+        "highlight_28_16s.jpg",
+        "highlight_28_17s.jpg"
     ],
-    "735.5385034013606": [
+    "773.2709297052154": [
         "highlight_29_1s.jpg",
         "highlight_29_2s.jpg",
         "highlight_29_3s.jpg",
@@ -329,46 +341,7 @@
         "highlight_29_16s.jpg",
         "highlight_29_17s.jpg",
         "highlight_29_18s.jpg",
-        "highlight_29_19s.jpg",
-        "highlight_29_20s.jpg",
-        "highlight_29_21s.jpg",
-        "highlight_29_22s.jpg",
-        "highlight_29_23s.jpg",
-        "highlight_29_24s.jpg",
-        "highlight_29_25s.jpg",
-        "highlight_29_26s.jpg",
-        "highlight_29_27s.jpg",
-        "highlight_29_28s.jpg",
-        "highlight_29_29s.jpg",
-        "highlight_29_30s.jpg",
-        "highlight_29_31s.jpg",
-        "highlight_29_32s.jpg",
-        "highlight_29_33s.jpg",
-        "highlight_29_34s.jpg",
-        "highlight_29_35s.jpg",
-        "highlight_29_36s.jpg",
-        "highlight_29_37s.jpg",
-        "highlight_29_38s.jpg",
-        "highlight_29_39s.jpg",
-        "highlight_29_40s.jpg",
-        "highlight_29_41s.jpg",
-        "highlight_29_42s.jpg",
-        "highlight_29_43s.jpg",
-        "highlight_29_44s.jpg",
-        "highlight_29_45s.jpg",
-        "highlight_29_46s.jpg",
-        "highlight_29_47s.jpg",
-        "highlight_29_48s.jpg",
-        "highlight_29_49s.jpg",
-        "highlight_29_50s.jpg",
-        "highlight_29_51s.jpg",
-        "highlight_29_52s.jpg",
-        "highlight_29_53s.jpg",
-        "highlight_29_54s.jpg",
-        "highlight_29_55s.jpg",
-        "highlight_29_56s.jpg",
-        "highlight_29_57s.jpg",
-        "highlight_29_58s.jpg"
+        "highlight_29_19s.jpg"
     ],
     "804.455328798186": [
         "highlight_30_1s.jpg",
@@ -377,7 +350,7 @@
         "highlight_30_4s.jpg",
         "highlight_30_5s.jpg"
     ],
-    "811.2355555555556": [
+    "811.258775510204": [
         "highlight_31_1s.jpg",
         "highlight_31_2s.jpg",
         "highlight_31_3s.jpg",
@@ -392,7 +365,8 @@
         "highlight_31_12s.jpg",
         "highlight_31_13s.jpg",
         "highlight_31_14s.jpg",
-        "highlight_31_15s.jpg"
+        "highlight_31_15s.jpg",
+        "highlight_31_16s.jpg"
     ],
     "827.6288435374149": [
         "highlight_32_1s.jpg",
@@ -403,12 +377,7 @@
         "highlight_32_6s.jpg",
         "highlight_32_7s.jpg",
         "highlight_32_8s.jpg",
-        "highlight_32_9s.jpg",
-        "highlight_32_10s.jpg",
-        "highlight_32_11s.jpg",
-        "highlight_32_12s.jpg",
-        "highlight_32_13s.jpg",
-        "highlight_32_14s.jpg"
+        "highlight_32_9s.jpg"
     ],
     "849.8039002267574": [
         "highlight_33_1s.jpg",
@@ -427,22 +396,21 @@
         "highlight_34_4s.jpg",
         "highlight_34_5s.jpg"
     ],
-    "870.2374603174603": [
+    "870.5160997732427": [
         "highlight_35_1s.jpg",
         "highlight_35_2s.jpg",
         "highlight_35_3s.jpg",
         "highlight_35_4s.jpg",
-        "highlight_35_5s.jpg",
-        "highlight_35_6s.jpg"
+        "highlight_35_5s.jpg"
     ],
-    "877.6678458049887": [
+    "877.7375056689342": [
         "highlight_36_1s.jpg",
         "highlight_36_2s.jpg",
         "highlight_36_3s.jpg",
         "highlight_36_4s.jpg",
         "highlight_36_5s.jpg"
     ],
-    "896.8243083900227": [
+    "897.938866213152": [
         "highlight_37_1s.jpg",
         "highlight_37_2s.jpg",
         "highlight_37_3s.jpg",
@@ -451,8 +419,7 @@
         "highlight_37_6s.jpg",
         "highlight_37_7s.jpg",
         "highlight_37_8s.jpg",
-        "highlight_37_9s.jpg",
-        "highlight_37_10s.jpg"
+        "highlight_37_9s.jpg"
     ],
     "917.8383673469388": [
         "highlight_38_1s.jpg",
@@ -464,7 +431,7 @@
         "highlight_38_7s.jpg",
         "highlight_38_8s.jpg"
     ],
-    "932.8384580498866": [
+    "932.8616780045352": [
         "highlight_39_1s.jpg",
         "highlight_39_2s.jpg",
         "highlight_39_3s.jpg",
@@ -475,7 +442,7 @@
         "highlight_39_8s.jpg",
         "highlight_39_9s.jpg"
     ],
-    "947.0955102040816": [
+    "947.025850340136": [
         "highlight_40_1s.jpg",
         "highlight_40_2s.jpg",
         "highlight_40_3s.jpg",
@@ -486,9 +453,10 @@
         "highlight_40_8s.jpg",
         "highlight_40_9s.jpg",
         "highlight_40_10s.jpg",
-        "highlight_40_11s.jpg"
+        "highlight_40_11s.jpg",
+        "highlight_40_12s.jpg"
     ],
-    "1000.0137868480725": [
+    "999.9209070294785": [
         "highlight_41_1s.jpg",
         "highlight_41_2s.jpg",
         "highlight_41_3s.jpg",
@@ -510,7 +478,7 @@
         "highlight_41_19s.jpg",
         "highlight_41_20s.jpg"
     ],
-    "1020.8885260770975": [
+    "1020.911746031746": [
         "highlight_42_1s.jpg",
         "highlight_42_2s.jpg",
         "highlight_42_3s.jpg",
@@ -529,62 +497,50 @@
         "highlight_43_2s.jpg",
         "highlight_43_3s.jpg",
         "highlight_43_4s.jpg",
-        "highlight_43_5s.jpg",
-        "highlight_43_6s.jpg",
-        "highlight_43_7s.jpg",
-        "highlight_43_8s.jpg",
-        "highlight_43_9s.jpg",
-        "highlight_43_10s.jpg",
-        "highlight_43_11s.jpg",
-        "highlight_43_12s.jpg",
-        "highlight_43_13s.jpg",
-        "highlight_43_14s.jpg",
-        "highlight_43_15s.jpg",
-        "highlight_43_16s.jpg"
+        "highlight_43_5s.jpg"
     ],
-    "1056.2292970521542": [
+    "1043.9691609977324": [
         "highlight_44_1s.jpg",
         "highlight_44_2s.jpg",
         "highlight_44_3s.jpg",
         "highlight_44_4s.jpg",
         "highlight_44_5s.jpg",
         "highlight_44_6s.jpg",
-        "highlight_44_7s.jpg"
+        "highlight_44_7s.jpg",
+        "highlight_44_8s.jpg",
+        "highlight_44_9s.jpg",
+        "highlight_44_10s.jpg"
     ],
-    "1070.4166893424035": [
+    "1056.438276643991": [
         "highlight_45_1s.jpg",
         "highlight_45_2s.jpg",
         "highlight_45_3s.jpg",
         "highlight_45_4s.jpg",
         "highlight_45_5s.jpg",
         "highlight_45_6s.jpg",
-        "highlight_45_7s.jpg",
-        "highlight_45_8s.jpg",
-        "highlight_45_9s.jpg",
-        "highlight_45_10s.jpg"
+        "highlight_45_7s.jpg"
     ],
-    "1081.81768707483": [
+    "1070.4166893424035": [
         "highlight_46_1s.jpg",
         "highlight_46_2s.jpg",
         "highlight_46_3s.jpg",
         "highlight_46_4s.jpg",
         "highlight_46_5s.jpg",
-        "highlight_46_6s.jpg"
+        "highlight_46_6s.jpg",
+        "highlight_46_7s.jpg",
+        "highlight_46_8s.jpg",
+        "highlight_46_9s.jpg",
+        "highlight_46_10s.jpg"
     ],
-    "1089.5499319727892": [
+    "1081.81768707483": [
         "highlight_47_1s.jpg",
         "highlight_47_2s.jpg",
         "highlight_47_3s.jpg",
         "highlight_47_4s.jpg",
         "highlight_47_5s.jpg",
-        "highlight_47_6s.jpg",
-        "highlight_47_7s.jpg",
-        "highlight_47_8s.jpg",
-        "highlight_47_9s.jpg",
-        "highlight_47_10s.jpg",
-        "highlight_47_11s.jpg"
+        "highlight_47_6s.jpg"
     ],
-    "1108.7760544217688": [
+    "1089.5499319727892": [
         "highlight_48_1s.jpg",
         "highlight_48_2s.jpg",
         "highlight_48_3s.jpg",
@@ -597,7 +553,7 @@
         "highlight_48_10s.jpg",
         "highlight_48_11s.jpg"
     ],
-    "1125.7034013605441": [
+    "1109.1475736961452": [
         "highlight_49_1s.jpg",
         "highlight_49_2s.jpg",
         "highlight_49_3s.jpg",
@@ -609,27 +565,29 @@
         "highlight_49_9s.jpg",
         "highlight_49_10s.jpg",
         "highlight_49_11s.jpg",
-        "highlight_49_12s.jpg",
-        "highlight_49_13s.jpg",
-        "highlight_49_14s.jpg",
-        "highlight_49_15s.jpg"
+        "highlight_49_12s.jpg"
     ],
-    "1144.9063038548752": [
+    "1125.7266213151927": [
         "highlight_50_1s.jpg",
         "highlight_50_2s.jpg",
         "highlight_50_3s.jpg",
         "highlight_50_4s.jpg",
         "highlight_50_5s.jpg",
-        "highlight_50_6s.jpg"
+        "highlight_50_6s.jpg",
+        "highlight_50_7s.jpg",
+        "highlight_50_8s.jpg",
+        "highlight_50_9s.jpg",
+        "highlight_50_10s.jpg",
+        "highlight_50_11s.jpg"
     ],
-    "1162.1819501133787": [
+    "1145.4868027210885": [
         "highlight_51_1s.jpg",
         "highlight_51_2s.jpg",
         "highlight_51_3s.jpg",
         "highlight_51_4s.jpg",
         "highlight_51_5s.jpg"
     ],
-    "1191.3926530612246": [
+    "1191.369433106576": [
         "highlight_52_1s.jpg",
         "highlight_52_2s.jpg",
         "highlight_52_3s.jpg",
@@ -656,14 +614,12 @@
         "highlight_54_4s.jpg",
         "highlight_54_5s.jpg"
     ],
-    "1247.3063038548753": [
+    "1248.3279818594103": [
         "highlight_55_1s.jpg",
         "highlight_55_2s.jpg",
         "highlight_55_3s.jpg",
         "highlight_55_4s.jpg",
-        "highlight_55_5s.jpg",
-        "highlight_55_6s.jpg",
-        "highlight_55_7s.jpg"
+        "highlight_55_5s.jpg"
     ],
     "1281.4860770975056": [
         "highlight_56_1s.jpg",
@@ -671,25 +627,16 @@
         "highlight_56_3s.jpg",
         "highlight_56_4s.jpg",
         "highlight_56_5s.jpg",
-        "highlight_56_6s.jpg",
-        "highlight_56_7s.jpg",
-        "highlight_56_8s.jpg"
+        "highlight_56_6s.jpg"
     ],
-    "1290.8204988662133": [
+    "1290.2167800453515": [
         "highlight_57_1s.jpg",
         "highlight_57_2s.jpg",
         "highlight_57_3s.jpg",
         "highlight_57_4s.jpg",
-        "highlight_57_5s.jpg",
-        "highlight_57_6s.jpg",
-        "highlight_57_7s.jpg",
-        "highlight_57_8s.jpg",
-        "highlight_57_9s.jpg",
-        "highlight_57_10s.jpg",
-        "highlight_57_11s.jpg",
-        "highlight_57_12s.jpg"
+        "highlight_57_5s.jpg"
     ],
-    "1330.0390022675738": [
+    "1296.1843083900226": [
         "highlight_58_1s.jpg",
         "highlight_58_2s.jpg",
         "highlight_58_3s.jpg",
@@ -697,22 +644,14 @@
         "highlight_58_5s.jpg",
         "highlight_58_6s.jpg"
     ],
-    "1345.4338321995465": [
+    "1330.0390022675738": [
         "highlight_59_1s.jpg",
         "highlight_59_2s.jpg",
         "highlight_59_3s.jpg",
         "highlight_59_4s.jpg",
-        "highlight_59_5s.jpg",
-        "highlight_59_6s.jpg",
-        "highlight_59_7s.jpg",
-        "highlight_59_8s.jpg",
-        "highlight_59_9s.jpg",
-        "highlight_59_10s.jpg",
-        "highlight_59_11s.jpg",
-        "highlight_59_12s.jpg",
-        "highlight_59_13s.jpg"
+        "highlight_59_5s.jpg"
     ],
-    "1373.4603174603174": [
+    "1347.2449886621316": [
         "highlight_60_1s.jpg",
         "highlight_60_2s.jpg",
         "highlight_60_3s.jpg",
@@ -723,117 +662,111 @@
         "highlight_60_8s.jpg",
         "highlight_60_9s.jpg",
         "highlight_60_10s.jpg",
-        "highlight_60_11s.jpg",
-        "highlight_60_12s.jpg",
-        "highlight_60_13s.jpg",
-        "highlight_60_14s.jpg",
-        "highlight_60_15s.jpg",
-        "highlight_60_16s.jpg",
-        "highlight_60_17s.jpg"
+        "highlight_60_11s.jpg"
     ],
-    "1399.838185941043": [
+    "1377.6631292517006": [
         "highlight_61_1s.jpg",
         "highlight_61_2s.jpg",
         "highlight_61_3s.jpg",
         "highlight_61_4s.jpg",
         "highlight_61_5s.jpg",
-        "highlight_61_6s.jpg"
+        "highlight_61_6s.jpg",
+        "highlight_61_7s.jpg",
+        "highlight_61_8s.jpg",
+        "highlight_61_9s.jpg",
+        "highlight_61_10s.jpg",
+        "highlight_61_11s.jpg"
     ],
-    "1487.447074829932": [
+    "1399.8614058956916": [
         "highlight_62_1s.jpg",
         "highlight_62_2s.jpg",
         "highlight_62_3s.jpg",
         "highlight_62_4s.jpg",
         "highlight_62_5s.jpg",
-        "highlight_62_6s.jpg",
-        "highlight_62_7s.jpg",
-        "highlight_62_8s.jpg",
-        "highlight_62_9s.jpg",
-        "highlight_62_10s.jpg",
-        "highlight_62_11s.jpg",
-        "highlight_62_12s.jpg",
-        "highlight_62_13s.jpg",
-        "highlight_62_14s.jpg",
-        "highlight_62_15s.jpg",
-        "highlight_62_16s.jpg",
-        "highlight_62_17s.jpg",
-        "highlight_62_18s.jpg",
-        "highlight_62_19s.jpg",
-        "highlight_62_20s.jpg",
-        "highlight_62_21s.jpg",
-        "highlight_62_22s.jpg"
+        "highlight_62_6s.jpg"
     ],
-    "1552.2075283446711": [
+    "1491.2087074829933": [
         "highlight_63_1s.jpg",
         "highlight_63_2s.jpg",
         "highlight_63_3s.jpg",
         "highlight_63_4s.jpg",
-        "highlight_63_5s.jpg"
+        "highlight_63_5s.jpg",
+        "highlight_63_6s.jpg",
+        "highlight_63_7s.jpg",
+        "highlight_63_8s.jpg",
+        "highlight_63_9s.jpg",
+        "highlight_63_10s.jpg",
+        "highlight_63_11s.jpg",
+        "highlight_63_12s.jpg",
+        "highlight_63_13s.jpg",
+        "highlight_63_14s.jpg",
+        "highlight_63_15s.jpg",
+        "highlight_63_16s.jpg",
+        "highlight_63_17s.jpg",
+        "highlight_63_18s.jpg"
     ],
-    "1586.2479818594104": [
+    "1552.1378684807257": [
         "highlight_64_1s.jpg",
         "highlight_64_2s.jpg",
         "highlight_64_3s.jpg",
         "highlight_64_4s.jpg",
-        "highlight_64_5s.jpg",
-        "highlight_64_6s.jpg",
-        "highlight_64_7s.jpg",
-        "highlight_64_8s.jpg"
+        "highlight_64_5s.jpg"
     ],
-    "1598.6009977324263": [
+    "1586.2479818594104": [
         "highlight_65_1s.jpg",
         "highlight_65_2s.jpg",
         "highlight_65_3s.jpg",
         "highlight_65_4s.jpg",
         "highlight_65_5s.jpg",
         "highlight_65_6s.jpg",
-        "highlight_65_7s.jpg",
-        "highlight_65_8s.jpg"
+        "highlight_65_7s.jpg"
     ],
-    "1617.827120181406": [
+    "1599.297596371882": [
         "highlight_66_1s.jpg",
         "highlight_66_2s.jpg",
         "highlight_66_3s.jpg",
         "highlight_66_4s.jpg",
         "highlight_66_5s.jpg",
-        "highlight_66_6s.jpg"
+        "highlight_66_6s.jpg",
+        "highlight_66_7s.jpg"
     ],
-    "1664.7778684807256": [
+    "1618.1986394557823": [
         "highlight_67_1s.jpg",
         "highlight_67_2s.jpg",
         "highlight_67_3s.jpg",
         "highlight_67_4s.jpg",
         "highlight_67_5s.jpg"
     ],
-    "1693.8260317460317": [
+    "1664.7778684807256": [
         "highlight_68_1s.jpg",
         "highlight_68_2s.jpg",
         "highlight_68_3s.jpg",
         "highlight_68_4s.jpg",
-        "highlight_68_5s.jpg",
-        "highlight_68_6s.jpg",
-        "highlight_68_7s.jpg",
-        "highlight_68_8s.jpg",
-        "highlight_68_9s.jpg",
-        "highlight_68_10s.jpg",
-        "highlight_68_11s.jpg"
+        "highlight_68_5s.jpg"
     ],
-    "1716.5351473922904": [
+    "1692.200634920635": [
         "highlight_69_1s.jpg",
         "highlight_69_2s.jpg",
         "highlight_69_3s.jpg",
         "highlight_69_4s.jpg",
-        "highlight_69_5s.jpg"
+        "highlight_69_5s.jpg",
+        "highlight_69_6s.jpg",
+        "highlight_69_7s.jpg",
+        "highlight_69_8s.jpg",
+        "highlight_69_9s.jpg",
+        "highlight_69_10s.jpg",
+        "highlight_69_11s.jpg",
+        "highlight_69_12s.jpg",
+        "highlight_69_13s.jpg"
     ],
-    "1727.4020861678005": [
+    "1716.5351473922904": [
         "highlight_70_1s.jpg",
         "highlight_70_2s.jpg",
         "highlight_70_3s.jpg",
         "highlight_70_4s.jpg",
-        "highlight_70_5s.jpg",
-        "highlight_70_6s.jpg"
+        "highlight_70_5s.jpg"
     ],
-    "1768.0370068027212": [
+    "1727.378866213152": [
         "highlight_71_1s.jpg",
         "highlight_71_2s.jpg",
         "highlight_71_3s.jpg",
@@ -841,15 +774,14 @@
         "highlight_71_5s.jpg",
         "highlight_71_6s.jpg"
     ],
-    "1778.6949659863947": [
+    "1768.0370068027212": [
         "highlight_72_1s.jpg",
         "highlight_72_2s.jpg",
         "highlight_72_3s.jpg",
         "highlight_72_4s.jpg",
-        "highlight_72_5s.jpg",
-        "highlight_72_6s.jpg"
+        "highlight_72_5s.jpg"
     ],
-    "1790.9783219954647": [
+    "1779.3451247165533": [
         "highlight_73_1s.jpg",
         "highlight_73_2s.jpg",
         "highlight_73_3s.jpg",
@@ -857,29 +789,22 @@
         "highlight_73_5s.jpg",
         "highlight_73_6s.jpg"
     ],
-    "1807.2787301587302": [
+    "1786.7755102040817": [
         "highlight_74_1s.jpg",
         "highlight_74_2s.jpg",
         "highlight_74_3s.jpg",
         "highlight_74_4s.jpg",
-        "highlight_74_5s.jpg",
-        "highlight_74_6s.jpg"
+        "highlight_74_5s.jpg"
     ],
-    "1827.8283900226756": [
+    "1807.3019501133788": [
         "highlight_75_1s.jpg",
         "highlight_75_2s.jpg",
         "highlight_75_3s.jpg",
         "highlight_75_4s.jpg",
         "highlight_75_5s.jpg",
-        "highlight_75_6s.jpg",
-        "highlight_75_7s.jpg",
-        "highlight_75_8s.jpg",
-        "highlight_75_9s.jpg",
-        "highlight_75_10s.jpg",
-        "highlight_75_11s.jpg",
-        "highlight_75_12s.jpg"
+        "highlight_75_6s.jpg"
     ],
-    "1847.2402721088436": [
+    "1827.8283900226756": [
         "highlight_76_1s.jpg",
         "highlight_76_2s.jpg",
         "highlight_76_3s.jpg",
@@ -888,9 +813,12 @@
         "highlight_76_6s.jpg",
         "highlight_76_7s.jpg",
         "highlight_76_8s.jpg",
-        "highlight_76_9s.jpg"
+        "highlight_76_9s.jpg",
+        "highlight_76_10s.jpg",
+        "highlight_76_11s.jpg",
+        "highlight_76_12s.jpg"
     ],
-    "1860.7775056689343": [
+    "1847.4492517006802": [
         "highlight_77_1s.jpg",
         "highlight_77_2s.jpg",
         "highlight_77_3s.jpg",
@@ -899,28 +827,31 @@
         "highlight_77_6s.jpg",
         "highlight_77_7s.jpg",
         "highlight_77_8s.jpg",
-        "highlight_77_9s.jpg",
-        "highlight_77_10s.jpg",
-        "highlight_77_11s.jpg",
-        "highlight_77_12s.jpg",
-        "highlight_77_13s.jpg",
-        "highlight_77_14s.jpg",
-        "highlight_77_15s.jpg",
-        "highlight_77_16s.jpg",
-        "highlight_77_17s.jpg",
-        "highlight_77_18s.jpg",
-        "highlight_77_19s.jpg",
-        "highlight_77_20s.jpg",
-        "highlight_77_21s.jpg"
+        "highlight_77_9s.jpg"
     ],
-    "1884.6243990929706": [
+    "1860.7775056689343": [
         "highlight_78_1s.jpg",
         "highlight_78_2s.jpg",
         "highlight_78_3s.jpg",
         "highlight_78_4s.jpg",
-        "highlight_78_5s.jpg"
+        "highlight_78_5s.jpg",
+        "highlight_78_6s.jpg",
+        "highlight_78_7s.jpg",
+        "highlight_78_8s.jpg",
+        "highlight_78_9s.jpg",
+        "highlight_78_10s.jpg",
+        "highlight_78_11s.jpg",
+        "highlight_78_12s.jpg",
+        "highlight_78_13s.jpg",
+        "highlight_78_14s.jpg",
+        "highlight_78_15s.jpg",
+        "highlight_78_16s.jpg",
+        "highlight_78_17s.jpg",
+        "highlight_78_18s.jpg",
+        "highlight_78_19s.jpg",
+        "highlight_78_20s.jpg"
     ],
-    "1890.8009070294784": [
+    "1884.6243990929706": [
         "highlight_79_1s.jpg",
         "highlight_79_2s.jpg",
         "highlight_79_3s.jpg",
@@ -949,9 +880,15 @@
         "highlight_79_26s.jpg",
         "highlight_79_27s.jpg",
         "highlight_79_28s.jpg",
-        "highlight_79_29s.jpg"
+        "highlight_79_29s.jpg",
+        "highlight_79_30s.jpg",
+        "highlight_79_31s.jpg",
+        "highlight_79_32s.jpg",
+        "highlight_79_33s.jpg",
+        "highlight_79_34s.jpg",
+        "highlight_79_35s.jpg"
     ],
-    "1923.355283446712": [
+    "1923.3785034013606": [
         "highlight_80_1s.jpg",
         "highlight_80_2s.jpg",
         "highlight_80_3s.jpg",
@@ -959,16 +896,15 @@
         "highlight_80_5s.jpg",
         "highlight_80_6s.jpg"
     ],
-    "1946.1804988662132": [
+    "1946.2965986394559": [
         "highlight_81_1s.jpg",
         "highlight_81_2s.jpg",
         "highlight_81_3s.jpg",
         "highlight_81_4s.jpg",
         "highlight_81_5s.jpg",
-        "highlight_81_6s.jpg",
-        "highlight_81_7s.jpg"
+        "highlight_81_6s.jpg"
     ],
-    "1970.9561904761904": [
+    "1976.9933786848073": [
         "highlight_82_1s.jpg",
         "highlight_82_2s.jpg",
         "highlight_82_3s.jpg",
@@ -996,23 +932,15 @@
         "highlight_82_25s.jpg",
         "highlight_82_26s.jpg",
         "highlight_82_27s.jpg",
-        "highlight_82_28s.jpg",
-        "highlight_82_29s.jpg",
-        "highlight_82_30s.jpg",
-        "highlight_82_31s.jpg",
-        "highlight_82_32s.jpg",
-        "highlight_82_33s.jpg",
-        "highlight_82_34s.jpg"
+        "highlight_82_28s.jpg"
     ],
-    "2021.2273922902493": [
+    "2023.8280272108843": [
         "highlight_83_1s.jpg",
         "highlight_83_2s.jpg",
         "highlight_83_3s.jpg",
         "highlight_83_4s.jpg",
         "highlight_83_5s.jpg",
-        "highlight_83_6s.jpg",
-        "highlight_83_7s.jpg",
-        "highlight_83_8s.jpg"
+        "highlight_83_6s.jpg"
     ],
     "2086.452244897959": [
         "highlight_84_1s.jpg",
@@ -1029,16 +957,15 @@
         "highlight_85_5s.jpg",
         "highlight_85_6s.jpg"
     ],
-    "2109.4167800453515": [
+    "2110.22947845805": [
         "highlight_86_1s.jpg",
         "highlight_86_2s.jpg",
         "highlight_86_3s.jpg",
         "highlight_86_4s.jpg",
         "highlight_86_5s.jpg",
-        "highlight_86_6s.jpg",
-        "highlight_86_7s.jpg"
+        "highlight_86_6s.jpg"
     ],
-    "2143.689433106576": [
+    "2145.98820861678": [
         "highlight_87_1s.jpg",
         "highlight_87_2s.jpg",
         "highlight_87_3s.jpg",
@@ -1053,30 +980,27 @@
         "highlight_87_12s.jpg",
         "highlight_87_13s.jpg",
         "highlight_87_14s.jpg",
-        "highlight_87_15s.jpg",
-        "highlight_87_16s.jpg",
-        "highlight_87_17s.jpg"
+        "highlight_87_15s.jpg"
     ],
-    "2183.8831746031747": [
+    "2181.5379591836736": [
         "highlight_88_1s.jpg",
         "highlight_88_2s.jpg",
         "highlight_88_3s.jpg",
         "highlight_88_4s.jpg",
-        "highlight_88_5s.jpg"
+        "highlight_88_5s.jpg",
+        "highlight_88_6s.jpg",
+        "highlight_88_7s.jpg",
+        "highlight_88_8s.jpg"
     ],
-    "2197.1649886621317": [
+    "2201.8321995464853": [
         "highlight_89_1s.jpg",
         "highlight_89_2s.jpg",
         "highlight_89_3s.jpg",
         "highlight_89_4s.jpg",
         "highlight_89_5s.jpg",
-        "highlight_89_6s.jpg",
-        "highlight_89_7s.jpg",
-        "highlight_89_8s.jpg",
-        "highlight_89_9s.jpg",
-        "highlight_89_10s.jpg"
+        "highlight_89_6s.jpg"
     ],
-    "2208.798185941043": [
+    "2208.7749659863944": [
         "highlight_90_1s.jpg",
         "highlight_90_2s.jpg",
         "highlight_90_3s.jpg",
@@ -1084,26 +1008,27 @@
         "highlight_90_5s.jpg",
         "highlight_90_6s.jpg"
     ],
-    "2226.3292517006803": [
+    "2267.196371882086": [
         "highlight_91_1s.jpg",
         "highlight_91_2s.jpg",
         "highlight_91_3s.jpg",
         "highlight_91_4s.jpg",
         "highlight_91_5s.jpg",
-        "highlight_91_6s.jpg"
+        "highlight_91_6s.jpg",
+        "highlight_91_7s.jpg",
+        "highlight_91_8s.jpg",
+        "highlight_91_9s.jpg",
+        "highlight_91_10s.jpg"
     ],
-    "2267.2195918367347": [
+    "2374.7512018140587": [
         "highlight_92_1s.jpg",
         "highlight_92_2s.jpg",
         "highlight_92_3s.jpg",
         "highlight_92_4s.jpg",
         "highlight_92_5s.jpg",
-        "highlight_92_6s.jpg",
-        "highlight_92_7s.jpg",
-        "highlight_92_8s.jpg",
-        "highlight_92_9s.jpg"
+        "highlight_92_6s.jpg"
     ],
-    "2374.008163265306": [
+    "2389.263673469388": [
         "highlight_93_1s.jpg",
         "highlight_93_2s.jpg",
         "highlight_93_3s.jpg",
@@ -1111,44 +1036,53 @@
         "highlight_93_5s.jpg",
         "highlight_93_6s.jpg"
     ],
-    "2389.2404535147393": [
+    "2402.429387755102": [
         "highlight_94_1s.jpg",
         "highlight_94_2s.jpg",
         "highlight_94_3s.jpg",
         "highlight_94_4s.jpg",
-        "highlight_94_5s.jpg",
-        "highlight_94_6s.jpg"
+        "highlight_94_5s.jpg"
     ],
-    "2402.429387755102": [
+    "2436.7484807256237": [
         "highlight_95_1s.jpg",
         "highlight_95_2s.jpg",
         "highlight_95_3s.jpg",
         "highlight_95_4s.jpg",
-        "highlight_95_5s.jpg",
-        "highlight_95_6s.jpg"
+        "highlight_95_5s.jpg"
     ],
-    "2436.7484807256237": [
+    "2478.660498866213": [
         "highlight_96_1s.jpg",
         "highlight_96_2s.jpg",
         "highlight_96_3s.jpg",
         "highlight_96_4s.jpg",
         "highlight_96_5s.jpg"
     ],
-    "2478.660498866213": [
+    "2486.369523809524": [
         "highlight_97_1s.jpg",
         "highlight_97_2s.jpg",
         "highlight_97_3s.jpg",
         "highlight_97_4s.jpg",
-        "highlight_97_5s.jpg"
+        "highlight_97_5s.jpg",
+        "highlight_97_6s.jpg",
+        "highlight_97_7s.jpg",
+        "highlight_97_8s.jpg",
+        "highlight_97_9s.jpg"
     ],
-    "2489.945396825397": [
+    "2515.115827664399": [
         "highlight_98_1s.jpg",
         "highlight_98_2s.jpg",
         "highlight_98_3s.jpg",
         "highlight_98_4s.jpg",
-        "highlight_98_5s.jpg"
+        "highlight_98_5s.jpg",
+        "highlight_98_6s.jpg",
+        "highlight_98_7s.jpg",
+        "highlight_98_8s.jpg",
+        "highlight_98_9s.jpg",
+        "highlight_98_10s.jpg",
+        "highlight_98_11s.jpg",
+        "highlight_98_12s.jpg"
     ],
-    "2515.115827664399": [
+    "2543.490612244898": [
         "highlight_99_1s.jpg",
         "highlight_99_2s.jpg",
         "highlight_99_3s.jpg",
@@ -1162,44 +1096,31 @@
         "highlight_99_11s.jpg",
         "highlight_99_12s.jpg",
         "highlight_99_13s.jpg",
-        "highlight_99_14s.jpg",
-        "highlight_99_15s.jpg",
-        "highlight_99_16s.jpg",
-        "highlight_99_17s.jpg",
-        "highlight_99_18s.jpg"
+        "highlight_99_14s.jpg"
     ],
-    "2543.490612244898": [
+    "2571.261678004535": [
         "highlight_100_1s.jpg",
         "highlight_100_2s.jpg",
         "highlight_100_3s.jpg",
         "highlight_100_4s.jpg",
         "highlight_100_5s.jpg",
-        "highlight_100_6s.jpg",
-        "highlight_100_7s.jpg",
-        "highlight_100_8s.jpg",
-        "highlight_100_9s.jpg",
-        "highlight_100_10s.jpg",
-        "highlight_100_11s.jpg",
-        "highlight_100_12s.jpg",
-        "highlight_100_13s.jpg",
-        "highlight_100_14s.jpg"
+        "highlight_100_6s.jpg"
     ],
-    "2571.261678004535": [
+    "2580.2478004535146": [
         "highlight_101_1s.jpg",
         "highlight_101_2s.jpg",
         "highlight_101_3s.jpg",
         "highlight_101_4s.jpg",
-        "highlight_101_5s.jpg",
-        "highlight_101_6s.jpg"
+        "highlight_101_5s.jpg"
     ],
-    "2580.2478004535146": [
+    "2656.7575510204083": [
         "highlight_102_1s.jpg",
         "highlight_102_2s.jpg",
         "highlight_102_3s.jpg",
         "highlight_102_4s.jpg",
         "highlight_102_5s.jpg"
     ],
-    "2656.7575510204083": [
+    "2730.062947845805": [
         "highlight_103_1s.jpg",
         "highlight_103_2s.jpg",
         "highlight_103_3s.jpg",
@@ -1209,64 +1130,56 @@
         "highlight_103_7s.jpg",
         "highlight_103_8s.jpg"
     ],
-    "2669.296326530612": [
+    "2795.1949206349204": [
         "highlight_104_1s.jpg",
         "highlight_104_2s.jpg",
         "highlight_104_3s.jpg",
         "highlight_104_4s.jpg",
-        "highlight_104_5s.jpg"
+        "highlight_104_5s.jpg",
+        "highlight_104_6s.jpg",
+        "highlight_104_7s.jpg",
+        "highlight_104_8s.jpg",
+        "highlight_104_9s.jpg"
     ],
-    "2718.452970521542": [
+    "2840.589931972789": [
         "highlight_105_1s.jpg",
         "highlight_105_2s.jpg",
         "highlight_105_3s.jpg",
         "highlight_105_4s.jpg",
         "highlight_105_5s.jpg"
     ],
-    "2728.646530612245": [
+    "2849.622494331066": [
         "highlight_106_1s.jpg",
         "highlight_106_2s.jpg",
         "highlight_106_3s.jpg",
         "highlight_106_4s.jpg",
-        "highlight_106_5s.jpg",
-        "highlight_106_6s.jpg",
-        "highlight_106_7s.jpg",
-        "highlight_106_8s.jpg",
-        "highlight_106_9s.jpg"
+        "highlight_106_5s.jpg"
     ],
-    "2764.7303401360546": [
+    "2859.305215419501": [
         "highlight_107_1s.jpg",
         "highlight_107_2s.jpg",
         "highlight_107_3s.jpg",
         "highlight_107_4s.jpg",
-        "highlight_107_5s.jpg",
-        "highlight_107_6s.jpg",
-        "highlight_107_7s.jpg",
-        "highlight_107_8s.jpg",
-        "highlight_107_9s.jpg",
-        "highlight_107_10s.jpg",
-        "highlight_107_11s.jpg"
+        "highlight_107_5s.jpg"
     ],
-    "2787.9967346938774": [
+    "2898.7326984126985": [
         "highlight_108_1s.jpg",
         "highlight_108_2s.jpg",
         "highlight_108_3s.jpg",
         "highlight_108_4s.jpg",
-        "highlight_108_5s.jpg"
+        "highlight_108_5s.jpg",
+        "highlight_108_6s.jpg"
     ],
-    "2794.684081632653": [
+    "2905.5361451247168": [
         "highlight_109_1s.jpg",
         "highlight_109_2s.jpg",
         "highlight_109_3s.jpg",
         "highlight_109_4s.jpg",
         "highlight_109_5s.jpg",
         "highlight_109_6s.jpg",
-        "highlight_109_7s.jpg",
-        "highlight_109_8s.jpg",
-        "highlight_109_9s.jpg",
-        "highlight_109_10s.jpg"
+        "highlight_109_7s.jpg"
     ],
-    "2849.622494331066": [
+    "2992.2162358276646": [
         "highlight_110_1s.jpg",
         "highlight_110_2s.jpg",
         "highlight_110_3s.jpg",
@@ -1276,155 +1189,148 @@
         "highlight_110_7s.jpg",
         "highlight_110_8s.jpg",
         "highlight_110_9s.jpg",
-        "highlight_110_10s.jpg",
-        "highlight_110_11s.jpg",
-        "highlight_110_12s.jpg",
-        "highlight_110_13s.jpg",
-        "highlight_110_14s.jpg",
-        "highlight_110_15s.jpg"
+        "highlight_110_10s.jpg"
     ],
-    "2884.1970068027213": [
+    "3004.8943310657596": [
         "highlight_111_1s.jpg",
         "highlight_111_2s.jpg",
         "highlight_111_3s.jpg",
         "highlight_111_4s.jpg",
         "highlight_111_5s.jpg",
-        "highlight_111_6s.jpg"
+        "highlight_111_6s.jpg",
+        "highlight_111_7s.jpg",
+        "highlight_111_8s.jpg",
+        "highlight_111_9s.jpg",
+        "highlight_111_10s.jpg",
+        "highlight_111_11s.jpg",
+        "highlight_111_12s.jpg",
+        "highlight_111_13s.jpg",
+        "highlight_111_14s.jpg",
+        "highlight_111_15s.jpg",
+        "highlight_111_16s.jpg"
     ],
-    "2898.70947845805": [
+    "3036.659229024943": [
         "highlight_112_1s.jpg",
         "highlight_112_2s.jpg",
         "highlight_112_3s.jpg",
         "highlight_112_4s.jpg",
         "highlight_112_5s.jpg",
-        "highlight_112_6s.jpg"
+        "highlight_112_6s.jpg",
+        "highlight_112_7s.jpg",
+        "highlight_112_8s.jpg",
+        "highlight_112_9s.jpg",
+        "highlight_112_10s.jpg",
+        "highlight_112_11s.jpg",
+        "highlight_112_12s.jpg",
+        "highlight_112_13s.jpg",
+        "highlight_112_14s.jpg",
+        "highlight_112_15s.jpg"
     ],
-    "2905.5361451247168": [
+    "3055.746031746032": [
         "highlight_113_1s.jpg",
         "highlight_113_2s.jpg",
         "highlight_113_3s.jpg",
         "highlight_113_4s.jpg",
         "highlight_113_5s.jpg",
         "highlight_113_6s.jpg",
-        "highlight_113_7s.jpg"
+        "highlight_113_7s.jpg",
+        "highlight_113_8s.jpg",
+        "highlight_113_9s.jpg",
+        "highlight_113_10s.jpg"
     ],
-    "2992.100136054422": [
+    "3066.473650793651": [
         "highlight_114_1s.jpg",
         "highlight_114_2s.jpg",
         "highlight_114_3s.jpg",
         "highlight_114_4s.jpg",
         "highlight_114_5s.jpg",
         "highlight_114_6s.jpg",
-        "highlight_114_7s.jpg",
-        "highlight_114_8s.jpg",
-        "highlight_114_9s.jpg",
-        "highlight_114_10s.jpg"
+        "highlight_114_7s.jpg"
     ],
-    "3004.8943310657596": [
+    "3075.3668934240363": [
         "highlight_115_1s.jpg",
         "highlight_115_2s.jpg",
         "highlight_115_3s.jpg",
         "highlight_115_4s.jpg",
-        "highlight_115_5s.jpg",
-        "highlight_115_6s.jpg",
-        "highlight_115_7s.jpg",
-        "highlight_115_8s.jpg",
-        "highlight_115_9s.jpg",
-        "highlight_115_10s.jpg",
-        "highlight_115_11s.jpg",
-        "highlight_115_12s.jpg",
-        "highlight_115_13s.jpg",
-        "highlight_115_14s.jpg",
-        "highlight_115_15s.jpg",
-        "highlight_115_16s.jpg"
+        "highlight_115_5s.jpg"
     ],
-    "3036.6824489795918": [
+    "3086.8375510204082": [
         "highlight_116_1s.jpg",
         "highlight_116_2s.jpg",
         "highlight_116_3s.jpg",
         "highlight_116_4s.jpg",
-        "highlight_116_5s.jpg",
-        "highlight_116_6s.jpg",
-        "highlight_116_7s.jpg",
-        "highlight_116_8s.jpg",
-        "highlight_116_9s.jpg",
-        "highlight_116_10s.jpg",
-        "highlight_116_11s.jpg",
-        "highlight_116_12s.jpg",
-        "highlight_116_13s.jpg",
-        "highlight_116_14s.jpg",
-        "highlight_116_15s.jpg"
+        "highlight_116_5s.jpg"
     ],
-    "3055.7228117913833": [
+    "3099.09768707483": [
         "highlight_117_1s.jpg",
         "highlight_117_2s.jpg",
         "highlight_117_3s.jpg",
         "highlight_117_4s.jpg",
         "highlight_117_5s.jpg",
-        "highlight_117_6s.jpg",
-        "highlight_117_7s.jpg",
-        "highlight_117_8s.jpg",
-        "highlight_117_9s.jpg",
-        "highlight_117_10s.jpg"
+        "highlight_117_6s.jpg"
     ],
-    "3066.4504308390024": [
+    "3110.452244897959": [
         "highlight_118_1s.jpg",
         "highlight_118_2s.jpg",
         "highlight_118_3s.jpg",
         "highlight_118_4s.jpg",
         "highlight_118_5s.jpg",
         "highlight_118_6s.jpg",
-        "highlight_118_7s.jpg"
+        "highlight_118_7s.jpg",
+        "highlight_118_8s.jpg",
+        "highlight_118_9s.jpg",
+        "highlight_118_10s.jpg",
+        "highlight_118_11s.jpg",
+        "highlight_118_12s.jpg",
+        "highlight_118_13s.jpg",
+        "highlight_118_14s.jpg",
+        "highlight_118_15s.jpg",
+        "highlight_118_16s.jpg",
+        "highlight_118_17s.jpg",
+        "highlight_118_18s.jpg",
+        "highlight_118_19s.jpg",
+        "highlight_118_20s.jpg"
     ],
-    "3075.343673469388": [
+    "3132.348662131519": [
         "highlight_119_1s.jpg",
         "highlight_119_2s.jpg",
         "highlight_119_3s.jpg",
         "highlight_119_4s.jpg",
-        "highlight_119_5s.jpg"
+        "highlight_119_5s.jpg",
+        "highlight_119_6s.jpg",
+        "highlight_119_7s.jpg",
+        "highlight_119_8s.jpg",
+        "highlight_119_9s.jpg",
+        "highlight_119_10s.jpg",
+        "highlight_119_11s.jpg"
     ],
-    "3086.791111111111": [
+    "3155.034557823129": [
         "highlight_120_1s.jpg",
         "highlight_120_2s.jpg",
         "highlight_120_3s.jpg",
         "highlight_120_4s.jpg",
-        "highlight_120_5s.jpg"
+        "highlight_120_5s.jpg",
+        "highlight_120_6s.jpg",
+        "highlight_120_7s.jpg",
+        "highlight_120_8s.jpg",
+        "highlight_120_9s.jpg",
+        "highlight_120_10s.jpg"
     ],
-    "3096.636371882086": [
+    "3165.5531972789117": [
         "highlight_121_1s.jpg",
         "highlight_121_2s.jpg",
         "highlight_121_3s.jpg",
         "highlight_121_4s.jpg",
-        "highlight_121_5s.jpg",
-        "highlight_121_6s.jpg",
-        "highlight_121_7s.jpg",
-        "highlight_121_8s.jpg",
-        "highlight_121_9s.jpg"
+        "highlight_121_5s.jpg"
     ],
-    "3110.452244897959": [
+    "3175.7467573696144": [
         "highlight_122_1s.jpg",
         "highlight_122_2s.jpg",
         "highlight_122_3s.jpg",
         "highlight_122_4s.jpg",
-        "highlight_122_5s.jpg",
-        "highlight_122_6s.jpg",
-        "highlight_122_7s.jpg",
-        "highlight_122_8s.jpg",
-        "highlight_122_9s.jpg",
-        "highlight_122_10s.jpg",
-        "highlight_122_11s.jpg",
-        "highlight_122_12s.jpg",
-        "highlight_122_13s.jpg",
-        "highlight_122_14s.jpg",
-        "highlight_122_15s.jpg",
-        "highlight_122_16s.jpg",
-        "highlight_122_17s.jpg",
-        "highlight_122_18s.jpg",
-        "highlight_122_19s.jpg",
-        "highlight_122_20s.jpg",
-        "highlight_122_21s.jpg"
+        "highlight_122_5s.jpg"
     ],
-    "3132.418321995465": [
+    "3182.0161451247163": [
         "highlight_123_1s.jpg",
         "highlight_123_2s.jpg",
         "highlight_123_3s.jpg",
@@ -1435,28 +1341,28 @@
         "highlight_123_8s.jpg",
         "highlight_123_9s.jpg",
         "highlight_123_10s.jpg",
-        "highlight_123_11s.jpg"
+        "highlight_123_11s.jpg",
+        "highlight_123_12s.jpg"
     ],
-    "3155.034557823129": [
+    "3195.367619047619": [
         "highlight_124_1s.jpg",
         "highlight_124_2s.jpg",
         "highlight_124_3s.jpg",
         "highlight_124_4s.jpg",
-        "highlight_124_5s.jpg",
-        "highlight_124_6s.jpg",
-        "highlight_124_7s.jpg",
-        "highlight_124_8s.jpg",
-        "highlight_124_9s.jpg",
-        "highlight_124_10s.jpg"
+        "highlight_124_5s.jpg"
     ],
-    "3175.7467573696144": [
+    "3235.956099773243": [
         "highlight_125_1s.jpg",
         "highlight_125_2s.jpg",
         "highlight_125_3s.jpg",
         "highlight_125_4s.jpg",
-        "highlight_125_5s.jpg"
+        "highlight_125_5s.jpg",
+        "highlight_125_6s.jpg",
+        "highlight_125_7s.jpg",
+        "highlight_125_8s.jpg",
+        "highlight_125_9s.jpg"
     ],
-    "3182.0161451247163": [
+    "3297.3960997732424": [
         "highlight_126_1s.jpg",
         "highlight_126_2s.jpg",
         "highlight_126_3s.jpg",
@@ -1467,16 +1373,9 @@
         "highlight_126_8s.jpg",
         "highlight_126_9s.jpg",
         "highlight_126_10s.jpg",
-        "highlight_126_11s.jpg",
-        "highlight_126_12s.jpg",
-        "highlight_126_13s.jpg",
-        "highlight_126_14s.jpg",
-        "highlight_126_15s.jpg",
-        "highlight_126_16s.jpg",
-        "highlight_126_17s.jpg",
-        "highlight_126_18s.jpg"
+        "highlight_126_11s.jpg"
     ],
-    "3235.956099773243": [
+    "3355.0744671201815": [
         "highlight_127_1s.jpg",
         "highlight_127_2s.jpg",
         "highlight_127_3s.jpg",
@@ -1489,53 +1388,41 @@
         "highlight_127_10s.jpg",
         "highlight_127_11s.jpg",
         "highlight_127_12s.jpg",
-        "highlight_127_13s.jpg"
+        "highlight_127_13s.jpg",
+        "highlight_127_14s.jpg",
+        "highlight_127_15s.jpg",
+        "highlight_127_16s.jpg",
+        "highlight_127_17s.jpg",
+        "highlight_127_18s.jpg",
+        "highlight_127_19s.jpg",
+        "highlight_127_20s.jpg",
+        "highlight_127_21s.jpg",
+        "highlight_127_22s.jpg"
     ],
-    "3297.4425396825395": [
+    "3400.608798185941": [
         "highlight_128_1s.jpg",
         "highlight_128_2s.jpg",
         "highlight_128_3s.jpg",
         "highlight_128_4s.jpg",
         "highlight_128_5s.jpg",
-        "highlight_128_6s.jpg",
-        "highlight_128_7s.jpg",
-        "highlight_128_8s.jpg",
-        "highlight_128_9s.jpg",
-        "highlight_128_10s.jpg",
-        "highlight_128_11s.jpg"
+        "highlight_128_6s.jpg"
     ],
-    "3319.8497959183674": [
+    "3429.2854421768707": [
         "highlight_129_1s.jpg",
         "highlight_129_2s.jpg",
         "highlight_129_3s.jpg",
         "highlight_129_4s.jpg",
-        "highlight_129_5s.jpg"
+        "highlight_129_5s.jpg",
+        "highlight_129_6s.jpg"
     ],
-    "3355.0744671201815": [
+    "3475.702131519274": [
         "highlight_130_1s.jpg",
         "highlight_130_2s.jpg",
         "highlight_130_3s.jpg",
         "highlight_130_4s.jpg",
-        "highlight_130_5s.jpg",
-        "highlight_130_6s.jpg",
-        "highlight_130_7s.jpg",
-        "highlight_130_8s.jpg",
-        "highlight_130_9s.jpg",
-        "highlight_130_10s.jpg",
-        "highlight_130_11s.jpg",
-        "highlight_130_12s.jpg",
-        "highlight_130_13s.jpg",
-        "highlight_130_14s.jpg",
-        "highlight_130_15s.jpg",
-        "highlight_130_16s.jpg",
-        "highlight_130_17s.jpg",
-        "highlight_130_18s.jpg",
-        "highlight_130_19s.jpg",
-        "highlight_130_20s.jpg",
-        "highlight_130_21s.jpg",
-        "highlight_130_22s.jpg"
+        "highlight_130_5s.jpg"
     ],
-    "3400.608798185941": [
+    "3489.8430839002267": [
         "highlight_131_1s.jpg",
         "highlight_131_2s.jpg",
         "highlight_131_3s.jpg",
@@ -1543,14 +1430,15 @@
         "highlight_131_5s.jpg",
         "highlight_131_6s.jpg"
     ],
-    "3429.5873015873017": [
+    "3504.819954648526": [
         "highlight_132_1s.jpg",
         "highlight_132_2s.jpg",
         "highlight_132_3s.jpg",
         "highlight_132_4s.jpg",
-        "highlight_132_5s.jpg"
+        "highlight_132_5s.jpg",
+        "highlight_132_6s.jpg"
     ],
-    "3436.413968253968": [
+    "3513.2487981859413": [
         "highlight_133_1s.jpg",
         "highlight_133_2s.jpg",
         "highlight_133_3s.jpg",
@@ -1558,30 +1446,38 @@
         "highlight_133_5s.jpg",
         "highlight_133_6s.jpg"
     ],
-    "3475.702131519274": [
+    "3537.9548299319727": [
         "highlight_134_1s.jpg",
         "highlight_134_2s.jpg",
         "highlight_134_3s.jpg",
         "highlight_134_4s.jpg",
-        "highlight_134_5s.jpg"
+        "highlight_134_5s.jpg",
+        "highlight_134_6s.jpg"
     ],
-    "3489.8430839002267": [
+    "3563.868299319728": [
         "highlight_135_1s.jpg",
         "highlight_135_2s.jpg",
         "highlight_135_3s.jpg",
         "highlight_135_4s.jpg",
         "highlight_135_5s.jpg",
-        "highlight_135_6s.jpg"
+        "highlight_135_6s.jpg",
+        "highlight_135_7s.jpg",
+        "highlight_135_8s.jpg",
+        "highlight_135_9s.jpg",
+        "highlight_135_10s.jpg",
+        "highlight_135_11s.jpg"
     ],
-    "3504.819954648526": [
+    "3582.862222222222": [
         "highlight_136_1s.jpg",
         "highlight_136_2s.jpg",
         "highlight_136_3s.jpg",
         "highlight_136_4s.jpg",
         "highlight_136_5s.jpg",
-        "highlight_136_6s.jpg"
+        "highlight_136_6s.jpg",
+        "highlight_136_7s.jpg",
+        "highlight_136_8s.jpg"
     ],
-    "3537.931609977324": [
+    "3592.5681632653063": [
         "highlight_137_1s.jpg",
         "highlight_137_2s.jpg",
         "highlight_137_3s.jpg",
@@ -1589,7 +1485,7 @@
         "highlight_137_5s.jpg",
         "highlight_137_6s.jpg"
     ],
-    "3555.393015873016": [
+    "3605.1301587301587": [
         "highlight_138_1s.jpg",
         "highlight_138_2s.jpg",
         "highlight_138_3s.jpg",
@@ -1602,16 +1498,9 @@
         "highlight_138_10s.jpg",
         "highlight_138_11s.jpg",
         "highlight_138_12s.jpg",
-        "highlight_138_13s.jpg",
-        "highlight_138_14s.jpg",
-        "highlight_138_15s.jpg",
-        "highlight_138_16s.jpg",
-        "highlight_138_17s.jpg",
-        "highlight_138_18s.jpg",
-        "highlight_138_19s.jpg",
-        "highlight_138_20s.jpg"
+        "highlight_138_13s.jpg"
     ],
-    "3582.8854421768706": [
+    "3623.4274829931974": [
         "highlight_139_1s.jpg",
         "highlight_139_2s.jpg",
         "highlight_139_3s.jpg",
@@ -1621,143 +1510,145 @@
         "highlight_139_7s.jpg",
         "highlight_139_8s.jpg"
     ],
-    "3592.5681632653063": [
+    "3633.388843537415": [
         "highlight_140_1s.jpg",
         "highlight_140_2s.jpg",
         "highlight_140_3s.jpg",
         "highlight_140_4s.jpg",
         "highlight_140_5s.jpg",
-        "highlight_140_6s.jpg"
+        "highlight_140_6s.jpg",
+        "highlight_140_7s.jpg",
+        "highlight_140_8s.jpg",
+        "highlight_140_9s.jpg",
+        "highlight_140_10s.jpg",
+        "highlight_140_11s.jpg",
+        "highlight_140_12s.jpg",
+        "highlight_140_13s.jpg",
+        "highlight_140_14s.jpg",
+        "highlight_140_15s.jpg",
+        "highlight_140_16s.jpg",
+        "highlight_140_17s.jpg",
+        "highlight_140_18s.jpg",
+        "highlight_140_19s.jpg",
+        "highlight_140_20s.jpg",
+        "highlight_140_21s.jpg",
+        "highlight_140_22s.jpg"
     ],
-    "3605.10693877551": [
+    "3658.768253968254": [
         "highlight_141_1s.jpg",
         "highlight_141_2s.jpg",
         "highlight_141_3s.jpg",
         "highlight_141_4s.jpg",
         "highlight_141_5s.jpg",
         "highlight_141_6s.jpg",
-        "highlight_141_7s.jpg",
-        "highlight_141_8s.jpg",
-        "highlight_141_9s.jpg",
-        "highlight_141_10s.jpg",
-        "highlight_141_11s.jpg",
-        "highlight_141_12s.jpg",
-        "highlight_141_13s.jpg"
+        "highlight_141_7s.jpg"
     ],
-    "3621.3609070294783": [
+    "3674.7203628117913": [
         "highlight_142_1s.jpg",
         "highlight_142_2s.jpg",
         "highlight_142_3s.jpg",
         "highlight_142_4s.jpg",
-        "highlight_142_5s.jpg",
-        "highlight_142_6s.jpg",
-        "highlight_142_7s.jpg",
-        "highlight_142_8s.jpg",
-        "highlight_142_9s.jpg",
-        "highlight_142_10s.jpg"
+        "highlight_142_5s.jpg"
     ],
-    "3633.388843537415": [
+    "3697.5920181405895": [
         "highlight_143_1s.jpg",
         "highlight_143_2s.jpg",
         "highlight_143_3s.jpg",
         "highlight_143_4s.jpg",
-        "highlight_143_5s.jpg",
-        "highlight_143_6s.jpg",
-        "highlight_143_7s.jpg",
-        "highlight_143_8s.jpg",
-        "highlight_143_9s.jpg",
-        "highlight_143_10s.jpg",
-        "highlight_143_11s.jpg",
-        "highlight_143_12s.jpg",
-        "highlight_143_13s.jpg",
-        "highlight_143_14s.jpg",
-        "highlight_143_15s.jpg",
-        "highlight_143_16s.jpg",
-        "highlight_143_17s.jpg",
-        "highlight_143_18s.jpg",
-        "highlight_143_19s.jpg",
-        "highlight_143_20s.jpg",
-        "highlight_143_21s.jpg",
-        "highlight_143_22s.jpg"
+        "highlight_143_5s.jpg"
     ],
-    "3656.121179138322": [
+    "3714.612244897959": [
         "highlight_144_1s.jpg",
         "highlight_144_2s.jpg",
         "highlight_144_3s.jpg",
         "highlight_144_4s.jpg",
         "highlight_144_5s.jpg",
         "highlight_144_6s.jpg",
-        "highlight_144_7s.jpg",
-        "highlight_144_8s.jpg",
-        "highlight_144_9s.jpg",
-        "highlight_144_10s.jpg"
+        "highlight_144_7s.jpg"
     ],
-    "3674.7203628117913": [
+    "3726.3151020408163": [
         "highlight_145_1s.jpg",
         "highlight_145_2s.jpg",
         "highlight_145_3s.jpg",
         "highlight_145_4s.jpg",
         "highlight_145_5s.jpg",
-        "highlight_145_6s.jpg"
+        "highlight_145_6s.jpg",
+        "highlight_145_7s.jpg",
+        "highlight_145_8s.jpg",
+        "highlight_145_9s.jpg"
     ],
-    "3697.6848979591837": [
+    "3742.2439909297054": [
         "highlight_146_1s.jpg",
         "highlight_146_2s.jpg",
         "highlight_146_3s.jpg",
         "highlight_146_4s.jpg",
-        "highlight_146_5s.jpg",
-        "highlight_146_6s.jpg"
+        "highlight_146_5s.jpg"
     ],
-    "3709.434195011338": [
+    "3770.618775510204": [
         "highlight_147_1s.jpg",
         "highlight_147_2s.jpg",
         "highlight_147_3s.jpg",
         "highlight_147_4s.jpg",
-        "highlight_147_5s.jpg",
-        "highlight_147_6s.jpg",
-        "highlight_147_7s.jpg",
-        "highlight_147_8s.jpg",
-        "highlight_147_9s.jpg",
-        "highlight_147_10s.jpg",
-        "highlight_147_11s.jpg",
-        "highlight_147_12s.jpg",
-        "highlight_147_13s.jpg"
+        "highlight_147_5s.jpg"
     ],
-    "3725.6881632653062": [
+    "3791.1452154195013": [
         "highlight_148_1s.jpg",
         "highlight_148_2s.jpg",
         "highlight_148_3s.jpg",
         "highlight_148_4s.jpg",
         "highlight_148_5s.jpg",
         "highlight_148_6s.jpg",
-        "highlight_148_7s.jpg",
-        "highlight_148_8s.jpg",
-        "highlight_148_9s.jpg"
+        "highlight_148_7s.jpg"
     ],
-    "3742.220770975057": [
+    "3813.413151927438": [
         "highlight_149_1s.jpg",
         "highlight_149_2s.jpg",
         "highlight_149_3s.jpg",
         "highlight_149_4s.jpg",
-        "highlight_149_5s.jpg"
+        "highlight_149_5s.jpg",
+        "highlight_149_6s.jpg",
+        "highlight_149_7s.jpg",
+        "highlight_149_8s.jpg",
+        "highlight_149_9s.jpg",
+        "highlight_149_10s.jpg",
+        "highlight_149_11s.jpg",
+        "highlight_149_12s.jpg",
+        "highlight_149_13s.jpg",
+        "highlight_149_14s.jpg",
+        "highlight_149_15s.jpg",
+        "highlight_149_16s.jpg",
+        "highlight_149_17s.jpg",
+        "highlight_149_18s.jpg",
+        "highlight_149_19s.jpg",
+        "highlight_149_20s.jpg",
+        "highlight_149_21s.jpg",
+        "highlight_149_22s.jpg",
+        "highlight_149_23s.jpg"
     ],
-    "3770.5026757369615": [
+    "3839.326621315193": [
         "highlight_150_1s.jpg",
         "highlight_150_2s.jpg",
         "highlight_150_3s.jpg",
         "highlight_150_4s.jpg",
-        "highlight_150_5s.jpg"
+        "highlight_150_5s.jpg",
+        "highlight_150_6s.jpg",
+        "highlight_150_7s.jpg",
+        "highlight_150_8s.jpg"
     ],
-    "3791.1452154195013": [
+    "3849.752380952381": [
         "highlight_151_1s.jpg",
         "highlight_151_2s.jpg",
         "highlight_151_3s.jpg",
         "highlight_151_4s.jpg",
         "highlight_151_5s.jpg",
         "highlight_151_6s.jpg",
-        "highlight_151_7s.jpg"
+        "highlight_151_7s.jpg",
+        "highlight_151_8s.jpg",
+        "highlight_151_9s.jpg",
+        "highlight_151_10s.jpg",
+        "highlight_151_11s.jpg"
     ],
-    "3809.814058956916": [
+    "3863.568253968254": [
         "highlight_152_1s.jpg",
         "highlight_152_2s.jpg",
         "highlight_152_3s.jpg",
@@ -1765,28 +1656,9 @@
         "highlight_152_5s.jpg",
         "highlight_152_6s.jpg",
         "highlight_152_7s.jpg",
-        "highlight_152_8s.jpg",
-        "highlight_152_9s.jpg",
-        "highlight_152_10s.jpg",
-        "highlight_152_11s.jpg",
-        "highlight_152_12s.jpg",
-        "highlight_152_13s.jpg",
-        "highlight_152_14s.jpg",
-        "highlight_152_15s.jpg",
-        "highlight_152_16s.jpg",
-        "highlight_152_17s.jpg",
-        "highlight_152_18s.jpg",
-        "highlight_152_19s.jpg",
-        "highlight_152_20s.jpg",
-        "highlight_152_21s.jpg",
-        "highlight_152_22s.jpg",
-        "highlight_152_23s.jpg",
-        "highlight_152_24s.jpg",
-        "highlight_152_25s.jpg",
-        "highlight_152_26s.jpg",
-        "highlight_152_27s.jpg"
+        "highlight_152_8s.jpg"
     ],
-    "3839.326621315193": [
+    "3874.435192743764": [
         "highlight_153_1s.jpg",
         "highlight_153_2s.jpg",
         "highlight_153_3s.jpg",
@@ -1794,9 +1666,11 @@
         "highlight_153_5s.jpg",
         "highlight_153_6s.jpg",
         "highlight_153_7s.jpg",
-        "highlight_153_8s.jpg"
+        "highlight_153_8s.jpg",
+        "highlight_153_9s.jpg",
+        "highlight_153_10s.jpg"
     ],
-    "3849.752380952381": [
+    "3887.1132879818592": [
         "highlight_154_1s.jpg",
         "highlight_154_2s.jpg",
         "highlight_154_3s.jpg",
@@ -1806,9 +1680,14 @@
         "highlight_154_7s.jpg",
         "highlight_154_8s.jpg",
         "highlight_154_9s.jpg",
-        "highlight_154_10s.jpg"
+        "highlight_154_10s.jpg",
+        "highlight_154_11s.jpg",
+        "highlight_154_12s.jpg",
+        "highlight_154_13s.jpg",
+        "highlight_154_14s.jpg",
+        "highlight_154_15s.jpg"
     ],
-    "3862.0125170068027": [
+    "3919.3425850340136": [
         "highlight_155_1s.jpg",
         "highlight_155_2s.jpg",
         "highlight_155_3s.jpg",
@@ -1819,69 +1698,54 @@
         "highlight_155_8s.jpg",
         "highlight_155_9s.jpg",
         "highlight_155_10s.jpg",
-        "highlight_155_11s.jpg"
+        "highlight_155_11s.jpg",
+        "highlight_155_12s.jpg",
+        "highlight_155_13s.jpg"
     ],
-    "3878.2897052154194": [
+    "3941.2390022675736": [
         "highlight_156_1s.jpg",
         "highlight_156_2s.jpg",
         "highlight_156_3s.jpg",
         "highlight_156_4s.jpg",
         "highlight_156_5s.jpg",
-        "highlight_156_6s.jpg"
+        "highlight_156_6s.jpg",
+        "highlight_156_7s.jpg",
+        "highlight_156_8s.jpg",
+        "highlight_156_9s.jpg",
+        "highlight_156_10s.jpg",
+        "highlight_156_11s.jpg",
+        "highlight_156_12s.jpg",
+        "highlight_156_13s.jpg",
+        "highlight_156_14s.jpg",
+        "highlight_156_15s.jpg",
+        "highlight_156_16s.jpg",
+        "highlight_156_17s.jpg",
+        "highlight_156_18s.jpg"
     ],
-    "3887.0900680272107": [
+    "3968.940408163265": [
         "highlight_157_1s.jpg",
         "highlight_157_2s.jpg",
         "highlight_157_3s.jpg",
         "highlight_157_4s.jpg",
         "highlight_157_5s.jpg",
-        "highlight_157_6s.jpg",
-        "highlight_157_7s.jpg",
-        "highlight_157_8s.jpg",
-        "highlight_157_9s.jpg",
-        "highlight_157_10s.jpg",
-        "highlight_157_11s.jpg",
-        "highlight_157_12s.jpg",
-        "highlight_157_13s.jpg",
-        "highlight_157_14s.jpg",
-        "highlight_157_15s.jpg"
+        "highlight_157_6s.jpg"
     ],
-    "3919.6444444444446": [
+    "3975.906394557823": [
         "highlight_158_1s.jpg",
         "highlight_158_2s.jpg",
         "highlight_158_3s.jpg",
         "highlight_158_4s.jpg",
-        "highlight_158_5s.jpg",
-        "highlight_158_6s.jpg",
-        "highlight_158_7s.jpg",
-        "highlight_158_8s.jpg",
-        "highlight_158_9s.jpg",
-        "highlight_158_10s.jpg",
-        "highlight_158_11s.jpg",
-        "highlight_158_12s.jpg",
-        "highlight_158_13s.jpg"
+        "highlight_158_5s.jpg"
     ],
-    "3941.2390022675736": [
+    "3983.545759637188": [
         "highlight_159_1s.jpg",
         "highlight_159_2s.jpg",
         "highlight_159_3s.jpg",
         "highlight_159_4s.jpg",
         "highlight_159_5s.jpg",
-        "highlight_159_6s.jpg",
-        "highlight_159_7s.jpg",
-        "highlight_159_8s.jpg",
-        "highlight_159_9s.jpg",
-        "highlight_159_10s.jpg",
-        "highlight_159_11s.jpg",
-        "highlight_159_12s.jpg",
-        "highlight_159_13s.jpg",
-        "highlight_159_14s.jpg",
-        "highlight_159_15s.jpg",
-        "highlight_159_16s.jpg",
-        "highlight_159_17s.jpg",
-        "highlight_159_18s.jpg"
+        "highlight_159_6s.jpg"
     ],
-    "3968.847528344671": [
+    "3995.666575963719": [
         "highlight_160_1s.jpg",
         "highlight_160_2s.jpg",
         "highlight_160_3s.jpg",
@@ -1889,15 +1753,22 @@
         "highlight_160_5s.jpg",
         "highlight_160_6s.jpg"
     ],
-    "3995.5504761904763": [
+    "4029.8927891156463": [
         "highlight_161_1s.jpg",
         "highlight_161_2s.jpg",
         "highlight_161_3s.jpg",
         "highlight_161_4s.jpg",
         "highlight_161_5s.jpg",
-        "highlight_161_6s.jpg"
+        "highlight_161_6s.jpg",
+        "highlight_161_7s.jpg",
+        "highlight_161_8s.jpg",
+        "highlight_161_9s.jpg",
+        "highlight_161_10s.jpg",
+        "highlight_161_11s.jpg",
+        "highlight_161_12s.jpg",
+        "highlight_161_13s.jpg"
     ],
-    "4027.895873015873": [
+    "4052.0214058956917": [
         "highlight_162_1s.jpg",
         "highlight_162_2s.jpg",
         "highlight_162_3s.jpg",
@@ -1906,38 +1777,23 @@
         "highlight_162_6s.jpg",
         "highlight_162_7s.jpg",
         "highlight_162_8s.jpg",
-        "highlight_162_9s.jpg",
-        "highlight_162_10s.jpg",
-        "highlight_162_11s.jpg",
-        "highlight_162_12s.jpg",
-        "highlight_162_13s.jpg",
-        "highlight_162_14s.jpg",
-        "highlight_162_15s.jpg",
-        "highlight_162_16s.jpg",
-        "highlight_162_17s.jpg",
-        "highlight_162_18s.jpg"
+        "highlight_162_9s.jpg"
     ],
-    "4051.9749659863946": [
+    "4079.537052154195": [
         "highlight_163_1s.jpg",
         "highlight_163_2s.jpg",
         "highlight_163_3s.jpg",
         "highlight_163_4s.jpg",
-        "highlight_163_5s.jpg",
-        "highlight_163_6s.jpg",
-        "highlight_163_7s.jpg",
-        "highlight_163_8s.jpg",
-        "highlight_163_9s.jpg",
-        "highlight_163_10s.jpg",
-        "highlight_163_11s.jpg"
+        "highlight_163_5s.jpg"
     ],
-    "4077.772335600907": [
+    "4096.975238095238": [
         "highlight_164_1s.jpg",
         "highlight_164_2s.jpg",
         "highlight_164_3s.jpg",
         "highlight_164_4s.jpg",
         "highlight_164_5s.jpg"
     ],
-    "4088.848253968254": [
+    "4104.057324263039": [
         "highlight_165_1s.jpg",
         "highlight_165_2s.jpg",
         "highlight_165_3s.jpg",
@@ -1945,43 +1801,57 @@
         "highlight_165_5s.jpg",
         "highlight_165_6s.jpg"
     ],
-    "4096.371519274377": [
+    "4133.7324263038545": [
         "highlight_166_1s.jpg",
         "highlight_166_2s.jpg",
         "highlight_166_3s.jpg",
         "highlight_166_4s.jpg",
-        "highlight_166_5s.jpg",
-        "highlight_166_6s.jpg",
-        "highlight_166_7s.jpg",
-        "highlight_166_8s.jpg",
-        "highlight_166_9s.jpg",
-        "highlight_166_10s.jpg",
-        "highlight_166_11s.jpg",
-        "highlight_166_12s.jpg",
-        "highlight_166_13s.jpg"
+        "highlight_166_5s.jpg"
     ],
-    "4117.0604988662135": [
+    "4161.758911564626": [
         "highlight_167_1s.jpg",
         "highlight_167_2s.jpg",
         "highlight_167_3s.jpg",
         "highlight_167_4s.jpg",
-        "highlight_167_5s.jpg"
+        "highlight_167_5s.jpg",
+        "highlight_167_6s.jpg",
+        "highlight_167_7s.jpg",
+        "highlight_167_8s.jpg",
+        "highlight_167_9s.jpg",
+        "highlight_167_10s.jpg"
     ],
-    "4133.7324263038545": [
+    "4175.598004535147": [
         "highlight_168_1s.jpg",
         "highlight_168_2s.jpg",
         "highlight_168_3s.jpg",
         "highlight_168_4s.jpg",
-        "highlight_168_5s.jpg"
+        "highlight_168_5s.jpg",
+        "highlight_168_6s.jpg",
+        "highlight_168_7s.jpg",
+        "highlight_168_8s.jpg",
+        "highlight_168_9s.jpg",
+        "highlight_168_10s.jpg",
+        "highlight_168_11s.jpg",
+        "highlight_168_12s.jpg",
+        "highlight_168_13s.jpg",
+        "highlight_168_14s.jpg",
+        "highlight_168_15s.jpg",
+        "highlight_168_16s.jpg",
+        "highlight_168_17s.jpg",
+        "highlight_168_18s.jpg",
+        "highlight_168_19s.jpg",
+        "highlight_168_20s.jpg"
     ],
-    "4166.844081632653": [
+    "4200.698775510204": [
         "highlight_169_1s.jpg",
         "highlight_169_2s.jpg",
         "highlight_169_3s.jpg",
         "highlight_169_4s.jpg",
-        "highlight_169_5s.jpg"
+        "highlight_169_5s.jpg",
+        "highlight_169_6s.jpg",
+        "highlight_169_7s.jpg"
     ],
-    "4175.621224489796": [
+    "4216.023945578231": [
         "highlight_170_1s.jpg",
         "highlight_170_2s.jpg",
         "highlight_170_3s.jpg",
@@ -1992,27 +1862,16 @@
         "highlight_170_8s.jpg",
         "highlight_170_9s.jpg",
         "highlight_170_10s.jpg",
-        "highlight_170_11s.jpg",
-        "highlight_170_12s.jpg",
-        "highlight_170_13s.jpg",
-        "highlight_170_14s.jpg",
-        "highlight_170_15s.jpg",
-        "highlight_170_16s.jpg",
-        "highlight_170_17s.jpg",
-        "highlight_170_18s.jpg",
-        "highlight_170_19s.jpg",
-        "highlight_170_20s.jpg"
+        "highlight_170_11s.jpg"
     ],
-    "4200.698775510204": [
+    "4228.841360544217": [
         "highlight_171_1s.jpg",
         "highlight_171_2s.jpg",
         "highlight_171_3s.jpg",
         "highlight_171_4s.jpg",
-        "highlight_171_5s.jpg",
-        "highlight_171_6s.jpg",
-        "highlight_171_7s.jpg"
+        "highlight_171_5s.jpg"
     ],
-    "4216.023945578231": [
+    "4235.366167800454": [
         "highlight_172_1s.jpg",
         "highlight_172_2s.jpg",
         "highlight_172_3s.jpg",
@@ -2021,78 +1880,57 @@
         "highlight_172_6s.jpg",
         "highlight_172_7s.jpg",
         "highlight_172_8s.jpg",
-        "highlight_172_9s.jpg",
-        "highlight_172_10s.jpg",
-        "highlight_172_11s.jpg"
+        "highlight_172_9s.jpg"
     ],
-    "4235.342947845805": [
+    "4251.782675736961": [
         "highlight_173_1s.jpg",
         "highlight_173_2s.jpg",
         "highlight_173_3s.jpg",
         "highlight_173_4s.jpg",
         "highlight_173_5s.jpg",
-        "highlight_173_6s.jpg",
-        "highlight_173_7s.jpg",
-        "highlight_173_8s.jpg",
-        "highlight_173_9s.jpg",
-        "highlight_173_10s.jpg",
-        "highlight_173_11s.jpg",
-        "highlight_173_12s.jpg",
-        "highlight_173_13s.jpg",
-        "highlight_173_14s.jpg",
-        "highlight_173_15s.jpg",
-        "highlight_173_16s.jpg"
+        "highlight_173_6s.jpg"
     ],
-    "4251.434376417234": [
+    "4271.03201814059": [
         "highlight_174_1s.jpg",
         "highlight_174_2s.jpg",
         "highlight_174_3s.jpg",
         "highlight_174_4s.jpg",
-        "highlight_174_5s.jpg",
-        "highlight_174_6s.jpg",
-        "highlight_174_7s.jpg"
+        "highlight_174_5s.jpg"
     ],
-    "4261.163537414966": [
+    "4302.193197278912": [
         "highlight_175_1s.jpg",
         "highlight_175_2s.jpg",
         "highlight_175_3s.jpg",
         "highlight_175_4s.jpg",
-        "highlight_175_5s.jpg"
+        "highlight_175_5s.jpg",
+        "highlight_175_6s.jpg",
+        "highlight_175_7s.jpg",
+        "highlight_175_8s.jpg",
+        "highlight_175_9s.jpg",
+        "highlight_175_10s.jpg"
     ],
-    "4302.193197278912": [
+    "4315.3589115646255": [
         "highlight_176_1s.jpg",
         "highlight_176_2s.jpg",
         "highlight_176_3s.jpg",
         "highlight_176_4s.jpg",
-        "highlight_176_5s.jpg",
-        "highlight_176_6s.jpg",
-        "highlight_176_7s.jpg",
-        "highlight_176_8s.jpg",
-        "highlight_176_9s.jpg",
-        "highlight_176_10s.jpg"
+        "highlight_176_5s.jpg"
     ],
-    "4315.080272108844": [
+    "4336.790929705216": [
         "highlight_177_1s.jpg",
         "highlight_177_2s.jpg",
         "highlight_177_3s.jpg",
         "highlight_177_4s.jpg",
         "highlight_177_5s.jpg"
     ],
-    "4335.885351473923": [
+    "4342.851337868481": [
         "highlight_178_1s.jpg",
         "highlight_178_2s.jpg",
         "highlight_178_3s.jpg",
         "highlight_178_4s.jpg",
-        "highlight_178_5s.jpg",
-        "highlight_178_6s.jpg",
-        "highlight_178_7s.jpg",
-        "highlight_178_8s.jpg",
-        "highlight_178_9s.jpg",
-        "highlight_178_10s.jpg",
-        "highlight_178_11s.jpg",
-        "highlight_178_12s.jpg"
+        "highlight_178_5s.jpg"
     ],
-    "4359.523265306122": [
+    "4359.453605442177": [
         "highlight_179_1s.jpg",
         "highlight_179_2s.jpg",
         "highlight_179_3s.jpg",
@@ -2129,34 +1967,23 @@
         "highlight_181_5s.jpg",
         "highlight_181_6s.jpg"
     ],
-    "4397.2324716553285": [
+    "4407.124172335601": [
         "highlight_182_1s.jpg",
         "highlight_182_2s.jpg",
         "highlight_182_3s.jpg",
         "highlight_182_4s.jpg",
-        "highlight_182_5s.jpg"
+        "highlight_182_5s.jpg",
+        "highlight_182_6s.jpg",
+        "highlight_182_7s.jpg",
+        "highlight_182_8s.jpg"
     ],
-    "4407.124172335601": [
+    "4418.060770975057": [
         "highlight_183_1s.jpg",
         "highlight_183_2s.jpg",
         "highlight_183_3s.jpg",
         "highlight_183_4s.jpg",
         "highlight_183_5s.jpg",
-        "highlight_183_6s.jpg",
-        "highlight_183_7s.jpg",
-        "highlight_183_8s.jpg",
-        "highlight_183_9s.jpg",
-        "highlight_183_10s.jpg",
-        "highlight_183_11s.jpg",
-        "highlight_183_12s.jpg",
-        "highlight_183_13s.jpg",
-        "highlight_183_14s.jpg",
-        "highlight_183_15s.jpg",
-        "highlight_183_16s.jpg",
-        "highlight_183_17s.jpg",
-        "highlight_183_18s.jpg",
-        "highlight_183_19s.jpg",
-        "highlight_183_20s.jpg"
+        "highlight_183_6s.jpg"
     ],
     "4439.307029478458": [
         "highlight_184_1s.jpg",
@@ -2172,7 +1999,7 @@
         "highlight_185_4s.jpg",
         "highlight_185_5s.jpg"
     ],
-    "4454.3303401360545": [
+    "4454.3071201814055": [
         "highlight_186_1s.jpg",
         "highlight_186_2s.jpg",
         "highlight_186_3s.jpg",
@@ -2180,35 +2007,22 @@
         "highlight_186_5s.jpg",
         "highlight_186_6s.jpg"
     ],
-    "4464.663219954648": [
+    "4470.166349206349": [
         "highlight_187_1s.jpg",
         "highlight_187_2s.jpg",
         "highlight_187_3s.jpg",
         "highlight_187_4s.jpg",
         "highlight_187_5s.jpg",
-        "highlight_187_6s.jpg",
-        "highlight_187_7s.jpg",
-        "highlight_187_8s.jpg",
-        "highlight_187_9s.jpg",
-        "highlight_187_10s.jpg",
-        "highlight_187_11s.jpg"
+        "highlight_187_6s.jpg"
     ],
-    "4498.448253968254": [
+    "4490.994648526077": [
         "highlight_188_1s.jpg",
         "highlight_188_2s.jpg",
         "highlight_188_3s.jpg",
         "highlight_188_4s.jpg",
-        "highlight_188_5s.jpg",
-        "highlight_188_6s.jpg",
-        "highlight_188_7s.jpg",
-        "highlight_188_8s.jpg",
-        "highlight_188_9s.jpg",
-        "highlight_188_10s.jpg",
-        "highlight_188_11s.jpg",
-        "highlight_188_12s.jpg",
-        "highlight_188_13s.jpg"
+        "highlight_188_5s.jpg"
     ],
-    "4535.042902494331": [
+    "4499.957551020409": [
         "highlight_189_1s.jpg",
         "highlight_189_2s.jpg",
         "highlight_189_3s.jpg",
@@ -2219,17 +2033,16 @@
         "highlight_189_8s.jpg",
         "highlight_189_9s.jpg",
         "highlight_189_10s.jpg",
-        "highlight_189_11s.jpg",
-        "highlight_189_12s.jpg",
-        "highlight_189_13s.jpg"
+        "highlight_189_11s.jpg"
     ],
-    "4589.145396825397": [
+    "4540.011972789116": [
         "highlight_190_1s.jpg",
         "highlight_190_2s.jpg",
         "highlight_190_3s.jpg",
         "highlight_190_4s.jpg",
         "highlight_190_5s.jpg",
-        "highlight_190_6s.jpg"
+        "highlight_190_6s.jpg",
+        "highlight_190_7s.jpg"
     ],
     "4629.873197278912": [
         "highlight_191_1s.jpg",
@@ -2240,39 +2053,39 @@
         "highlight_191_6s.jpg",
         "highlight_191_7s.jpg"
     ],
-    "4668.441541950114": [
+    "4678.26358276644": [
         "highlight_192_1s.jpg",
         "highlight_192_2s.jpg",
         "highlight_192_3s.jpg",
         "highlight_192_4s.jpg",
-        "highlight_192_5s.jpg"
+        "highlight_192_5s.jpg",
+        "highlight_192_6s.jpg",
+        "highlight_192_7s.jpg",
+        "highlight_192_8s.jpg"
     ],
-    "4678.240362811792": [
+    "4694.471111111111": [
         "highlight_193_1s.jpg",
         "highlight_193_2s.jpg",
         "highlight_193_3s.jpg",
         "highlight_193_4s.jpg",
         "highlight_193_5s.jpg",
-        "highlight_193_6s.jpg",
-        "highlight_193_7s.jpg",
-        "highlight_193_8s.jpg"
+        "highlight_193_6s.jpg"
     ],
-    "4694.471111111111": [
+    "4707.358185941043": [
         "highlight_194_1s.jpg",
         "highlight_194_2s.jpg",
         "highlight_194_3s.jpg",
         "highlight_194_4s.jpg",
-        "highlight_194_5s.jpg",
-        "highlight_194_6s.jpg"
+        "highlight_194_5s.jpg"
     ],
-    "4707.358185941043": [
+    "4735.361451247166": [
         "highlight_195_1s.jpg",
         "highlight_195_2s.jpg",
         "highlight_195_3s.jpg",
         "highlight_195_4s.jpg",
         "highlight_195_5s.jpg"
     ],
-    "4735.361451247166": [
+    "4741.537959183674": [
         "highlight_196_1s.jpg",
         "highlight_196_2s.jpg",
         "highlight_196_3s.jpg",
@@ -2281,26 +2094,9 @@
         "highlight_196_6s.jpg",
         "highlight_196_7s.jpg",
         "highlight_196_8s.jpg",
-        "highlight_196_9s.jpg",
-        "highlight_196_10s.jpg",
-        "highlight_196_11s.jpg",
-        "highlight_196_12s.jpg",
-        "highlight_196_13s.jpg",
-        "highlight_196_14s.jpg",
-        "highlight_196_15s.jpg",
-        "highlight_196_16s.jpg",
-        "highlight_196_17s.jpg",
-        "highlight_196_18s.jpg",
-        "highlight_196_19s.jpg",
-        "highlight_196_20s.jpg",
-        "highlight_196_21s.jpg",
-        "highlight_196_22s.jpg",
-        "highlight_196_23s.jpg",
-        "highlight_196_24s.jpg",
-        "highlight_196_25s.jpg",
-        "highlight_196_26s.jpg"
+        "highlight_196_9s.jpg"
     ],
-    "4769.47156462585": [
+    "4752.729977324263": [
         "highlight_197_1s.jpg",
         "highlight_197_2s.jpg",
         "highlight_197_3s.jpg",
@@ -2308,24 +2104,9 @@
         "highlight_197_5s.jpg",
         "highlight_197_6s.jpg",
         "highlight_197_7s.jpg",
-        "highlight_197_8s.jpg",
-        "highlight_197_9s.jpg",
-        "highlight_197_10s.jpg",
-        "highlight_197_11s.jpg",
-        "highlight_197_12s.jpg",
-        "highlight_197_13s.jpg",
-        "highlight_197_14s.jpg",
-        "highlight_197_15s.jpg",
-        "highlight_197_16s.jpg",
-        "highlight_197_17s.jpg",
-        "highlight_197_18s.jpg",
-        "highlight_197_19s.jpg",
-        "highlight_197_20s.jpg",
-        "highlight_197_21s.jpg",
-        "highlight_197_22s.jpg",
-        "highlight_197_23s.jpg"
+        "highlight_197_8s.jpg"
     ],
-    "4796.453151927438": [
+    "4769.47156462585": [
         "highlight_198_1s.jpg",
         "highlight_198_2s.jpg",
         "highlight_198_3s.jpg",
@@ -2333,9 +2114,24 @@
         "highlight_198_5s.jpg",
         "highlight_198_6s.jpg",
         "highlight_198_7s.jpg",
-        "highlight_198_8s.jpg"
+        "highlight_198_8s.jpg",
+        "highlight_198_9s.jpg",
+        "highlight_198_10s.jpg",
+        "highlight_198_11s.jpg",
+        "highlight_198_12s.jpg",
+        "highlight_198_13s.jpg",
+        "highlight_198_14s.jpg",
+        "highlight_198_15s.jpg",
+        "highlight_198_16s.jpg",
+        "highlight_198_17s.jpg",
+        "highlight_198_18s.jpg",
+        "highlight_198_19s.jpg",
+        "highlight_198_20s.jpg",
+        "highlight_198_21s.jpg",
+        "highlight_198_22s.jpg",
+        "highlight_198_23s.jpg"
     ],
-    "4816.166893424036": [
+    "4796.406712018141": [
         "highlight_199_1s.jpg",
         "highlight_199_2s.jpg",
         "highlight_199_3s.jpg",
@@ -2343,78 +2139,62 @@
         "highlight_199_5s.jpg",
         "highlight_199_6s.jpg",
         "highlight_199_7s.jpg",
-        "highlight_199_8s.jpg",
-        "highlight_199_9s.jpg",
-        "highlight_199_10s.jpg",
-        "highlight_199_11s.jpg",
-        "highlight_199_12s.jpg"
+        "highlight_199_8s.jpg"
     ],
-    "4842.753741496598": [
+    "4814.6808163265305": [
         "highlight_200_1s.jpg",
         "highlight_200_2s.jpg",
         "highlight_200_3s.jpg",
         "highlight_200_4s.jpg",
         "highlight_200_5s.jpg",
         "highlight_200_6s.jpg",
-        "highlight_200_7s.jpg",
-        "highlight_200_8s.jpg",
-        "highlight_200_9s.jpg"
+        "highlight_200_7s.jpg"
     ],
-    "4862.792562358277": [
+    "4823.248979591836": [
         "highlight_201_1s.jpg",
         "highlight_201_2s.jpg",
         "highlight_201_3s.jpg",
         "highlight_201_4s.jpg",
         "highlight_201_5s.jpg"
     ],
-    "4881.461405895691": [
+    "4842.73052154195": [
         "highlight_202_1s.jpg",
         "highlight_202_2s.jpg",
         "highlight_202_3s.jpg",
         "highlight_202_4s.jpg",
         "highlight_202_5s.jpg",
-        "highlight_202_6s.jpg"
+        "highlight_202_6s.jpg",
+        "highlight_202_7s.jpg",
+        "highlight_202_8s.jpg",
+        "highlight_202_9s.jpg",
+        "highlight_202_10s.jpg"
     ],
-    "4891.120907029478": [
+    "4862.792562358277": [
         "highlight_203_1s.jpg",
         "highlight_203_2s.jpg",
         "highlight_203_3s.jpg",
         "highlight_203_4s.jpg",
-        "highlight_203_5s.jpg",
-        "highlight_203_6s.jpg",
-        "highlight_203_7s.jpg",
-        "highlight_203_8s.jpg",
-        "highlight_203_9s.jpg"
+        "highlight_203_5s.jpg"
     ],
-    "4907.374875283446": [
+    "4881.925804988662": [
         "highlight_204_1s.jpg",
         "highlight_204_2s.jpg",
         "highlight_204_3s.jpg",
         "highlight_204_4s.jpg",
-        "highlight_204_5s.jpg",
-        "highlight_204_6s.jpg",
-        "highlight_204_7s.jpg",
-        "highlight_204_8s.jpg",
-        "highlight_204_9s.jpg",
-        "highlight_204_10s.jpg",
-        "highlight_204_11s.jpg",
-        "highlight_204_12s.jpg",
-        "highlight_204_13s.jpg",
-        "highlight_204_14s.jpg",
-        "highlight_204_15s.jpg",
-        "highlight_204_16s.jpg",
-        "highlight_204_17s.jpg"
+        "highlight_204_5s.jpg"
     ],
-    "4931.988027210884": [
+    "4891.09768707483": [
         "highlight_205_1s.jpg",
         "highlight_205_2s.jpg",
         "highlight_205_3s.jpg",
         "highlight_205_4s.jpg",
         "highlight_205_5s.jpg",
         "highlight_205_6s.jpg",
-        "highlight_205_7s.jpg"
+        "highlight_205_7s.jpg",
+        "highlight_205_8s.jpg",
+        "highlight_205_9s.jpg"
     ],
-    "4949.0779138322": [
+    "4907.374875283446": [
         "highlight_206_1s.jpg",
         "highlight_206_2s.jpg",
         "highlight_206_3s.jpg",
@@ -2426,9 +2206,16 @@
         "highlight_206_9s.jpg",
         "highlight_206_10s.jpg",
         "highlight_206_11s.jpg",
-        "highlight_206_12s.jpg"
+        "highlight_206_12s.jpg",
+        "highlight_206_13s.jpg",
+        "highlight_206_14s.jpg",
+        "highlight_206_15s.jpg",
+        "highlight_206_16s.jpg",
+        "highlight_206_17s.jpg",
+        "highlight_206_18s.jpg",
+        "highlight_206_19s.jpg"
     ],
-    "4966.817959183673": [
+    "4931.988027210884": [
         "highlight_207_1s.jpg",
         "highlight_207_2s.jpg",
         "highlight_207_3s.jpg",
@@ -2437,29 +2224,34 @@
         "highlight_207_6s.jpg",
         "highlight_207_7s.jpg"
     ],
-    "4977.917097505669": [
+    "4949.0779138322": [
         "highlight_208_1s.jpg",
         "highlight_208_2s.jpg",
         "highlight_208_3s.jpg",
         "highlight_208_4s.jpg",
-        "highlight_208_5s.jpg"
+        "highlight_208_5s.jpg",
+        "highlight_208_6s.jpg",
+        "highlight_208_7s.jpg",
+        "highlight_208_8s.jpg",
+        "highlight_208_9s.jpg"
     ],
-    "4991.640090702947": [
+    "4966.817959183673": [
         "highlight_209_1s.jpg",
         "highlight_209_2s.jpg",
         "highlight_209_3s.jpg",
         "highlight_209_4s.jpg",
-        "highlight_209_5s.jpg"
+        "highlight_209_5s.jpg",
+        "highlight_209_6s.jpg",
+        "highlight_209_7s.jpg"
     ],
-    "5028.118639455783": [
+    "5028.420498866213": [
         "highlight_210_1s.jpg",
         "highlight_210_2s.jpg",
         "highlight_210_3s.jpg",
         "highlight_210_4s.jpg",
-        "highlight_210_5s.jpg",
-        "highlight_210_6s.jpg"
+        "highlight_210_5s.jpg"
     ],
-    "5039.867936507936": [
+    "5039.937596371882": [
         "highlight_211_1s.jpg",
         "highlight_211_2s.jpg",
         "highlight_211_3s.jpg",
@@ -2467,44 +2259,41 @@
         "highlight_211_5s.jpg",
         "highlight_211_6s.jpg"
     ],
-    "5072.004353741497": [
+    "5051.6636734693875": [
         "highlight_212_1s.jpg",
         "highlight_212_2s.jpg",
         "highlight_212_3s.jpg",
         "highlight_212_4s.jpg",
-        "highlight_212_5s.jpg",
-        "highlight_212_6s.jpg"
+        "highlight_212_5s.jpg"
     ],
-    "5095.874467120181": [
+    "5071.981133786848": [
         "highlight_213_1s.jpg",
         "highlight_213_2s.jpg",
         "highlight_213_3s.jpg",
         "highlight_213_4s.jpg",
         "highlight_213_5s.jpg",
-        "highlight_213_6s.jpg",
-        "highlight_213_7s.jpg",
-        "highlight_213_8s.jpg",
-        "highlight_213_9s.jpg",
-        "highlight_213_10s.jpg",
-        "highlight_213_11s.jpg",
-        "highlight_213_12s.jpg"
+        "highlight_213_6s.jpg"
     ],
-    "5124.24925170068": [
+    "5096.594285714285": [
         "highlight_214_1s.jpg",
         "highlight_214_2s.jpg",
         "highlight_214_3s.jpg",
         "highlight_214_4s.jpg",
         "highlight_214_5s.jpg",
-        "highlight_214_6s.jpg"
+        "highlight_214_6s.jpg",
+        "highlight_214_7s.jpg",
+        "highlight_214_8s.jpg",
+        "highlight_214_9s.jpg",
+        "highlight_214_10s.jpg"
     ],
-    "5174.311473922902": [
+    "5114.334331065759": [
         "highlight_215_1s.jpg",
         "highlight_215_2s.jpg",
         "highlight_215_3s.jpg",
         "highlight_215_4s.jpg",
         "highlight_215_5s.jpg"
     ],
-    "5184.2960544217685": [
+    "5124.272471655328": [
         "highlight_216_1s.jpg",
         "highlight_216_2s.jpg",
         "highlight_216_3s.jpg",
@@ -2512,38 +2301,33 @@
         "highlight_216_5s.jpg",
         "highlight_216_6s.jpg"
     ],
-    "5204.938594104308": [
+    "5174.4507936507935": [
         "highlight_217_1s.jpg",
         "highlight_217_2s.jpg",
         "highlight_217_3s.jpg",
         "highlight_217_4s.jpg",
-        "highlight_217_5s.jpg",
-        "highlight_217_6s.jpg",
-        "highlight_217_7s.jpg",
-        "highlight_217_8s.jpg",
-        "highlight_217_9s.jpg"
+        "highlight_217_5s.jpg"
     ],
-    "5232.1291609977325": [
+    "5184.2960544217685": [
         "highlight_218_1s.jpg",
         "highlight_218_2s.jpg",
         "highlight_218_3s.jpg",
         "highlight_218_4s.jpg",
         "highlight_218_5s.jpg",
-        "highlight_218_6s.jpg",
-        "highlight_218_7s.jpg",
-        "highlight_218_8s.jpg",
-        "highlight_218_9s.jpg",
-        "highlight_218_10s.jpg"
+        "highlight_218_6s.jpg"
     ],
-    "5245.71283446712": [
+    "5204.91537414966": [
         "highlight_219_1s.jpg",
         "highlight_219_2s.jpg",
         "highlight_219_3s.jpg",
         "highlight_219_4s.jpg",
         "highlight_219_5s.jpg",
-        "highlight_219_6s.jpg"
+        "highlight_219_6s.jpg",
+        "highlight_219_7s.jpg",
+        "highlight_219_8s.jpg",
+        "highlight_219_9s.jpg"
     ],
-    "5255.534875283447": [
+    "5232.1059410430835": [
         "highlight_220_1s.jpg",
         "highlight_220_2s.jpg",
         "highlight_220_3s.jpg",
@@ -2551,19 +2335,38 @@
         "highlight_220_5s.jpg",
         "highlight_220_6s.jpg",
         "highlight_220_7s.jpg",
-        "highlight_220_8s.jpg"
+        "highlight_220_8s.jpg",
+        "highlight_220_9s.jpg",
+        "highlight_220_10s.jpg"
     ],
-    "5268.421950113378": [
+    "5245.736054421769": [
         "highlight_221_1s.jpg",
         "highlight_221_2s.jpg",
         "highlight_221_3s.jpg",
         "highlight_221_4s.jpg",
         "highlight_221_5s.jpg",
-        "highlight_221_6s.jpg",
-        "highlight_221_7s.jpg",
-        "highlight_221_8s.jpg",
-        "highlight_221_9s.jpg",
-        "highlight_221_10s.jpg",
-        "highlight_221_11s.jpg"
+        "highlight_221_6s.jpg"
+    ],
+    "5256.022494331066": [
+        "highlight_222_1s.jpg",
+        "highlight_222_2s.jpg",
+        "highlight_222_3s.jpg",
+        "highlight_222_4s.jpg",
+        "highlight_222_5s.jpg",
+        "highlight_222_6s.jpg",
+        "highlight_222_7s.jpg"
+    ],
+    "5268.421950113378": [
+        "highlight_223_1s.jpg",
+        "highlight_223_2s.jpg",
+        "highlight_223_3s.jpg",
+        "highlight_223_4s.jpg",
+        "highlight_223_5s.jpg",
+        "highlight_223_6s.jpg",
+        "highlight_223_7s.jpg",
+        "highlight_223_8s.jpg",
+        "highlight_223_9s.jpg",
+        "highlight_223_10s.jpg",
+        "highlight_223_11s.jpg"
     ]
 }

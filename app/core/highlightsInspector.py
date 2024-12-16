@@ -1,345 +1,303 @@
 import base64
+import concurrent.futures
 import json
-import sys
+import os
+import threading
 import time
+from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Tuple
 
 import requests
 
-OLLAMA_API_URL: str = "http://localhost:11434"
 
-
-class HighlightInspector:
-    def __init__(self, debug=True):
-        self.api_url = OLLAMA_API_URL
+class HighlightSequenceAnalyzer:
+    def __init__(self, images_dir: str, debug: bool = True, max_workers: int = 4):
+        self.api_url = "http://localhost:11434"
         self.model = "llava"
+        self.images_dir = Path(images_dir)
         self.debug = debug
+        self.max_workers = max_workers
+        self.print_lock = threading.Lock()
 
-    def get_prompt(self) -> str:
-        """Returns prompt requesting only probability distribution."""
-        return """You are an expert sports video analyst with decades of experience creating highlight reels for major sports networks.
-        You understand that being too lenient with what constitutes a highlight diminishes the impact of truly special moments.
-
-        Categories to consider:
-
-        'short_clip':
-        - Successful scoring plays (dunks, difficult shots going in)
-        - Game-changing defensive plays (blocks, crucial steals)
-        - Clear athletic feats in progress (player in air for dunk, acrobatic moves)
-        - Visible emotional reactions after big plays
-        - Crucial game moments (game-winners in progress, clutch shots)
-
-        'long_clip':
-        - Complex plays developing with clear purpose
-        - Fast breaks in progress
-        - Clear defensive sequences leading to turnovers
-        - Visible tactical plays unfolding
-        - Clear lead-up to scoring opportunities
-
-        'unimportant':
-        - Basic game setups
-        - Players just standing around
-        - Regular dribbling or passing
-        - No clear action visible
-        - Ball not visible in frame
-        - Standard court positioning
-
-        Examine this frame and assign probabilities for each category based on what you actually see in the frame.
-        Consider ONLY what is visible, not what might happen next.
-        
-        Respond ONLY with probabilities in exactly this format:
-        PROBABILITIES:
-        short_clip: <probability>
-        long_clip: <probability>
-        unimportant: <probability>"""
-
-    def debug_print(self, message: str):
-        """Print debug messages if debug mode is on."""
-        if self.debug:
-            print(f"DEBUG: {message}")
+    def safe_print(self, message: str):
+        """Thread-safe printing."""
+        with self.print_lock:
+            print(message)
 
     def encode_image(self, image_path: str) -> str:
-        """Convert image to base64 string with error handling."""
+        """Encode image with minimal logging."""
         try:
-            path = Path(image_path)
-            if not path.exists():
-                raise FileNotFoundError(f"Image file not found: {image_path}")
-
-            self.debug_print(f"Reading image from: {image_path}")
             with open(image_path, "rb") as image_file:
-                return base64.b64encode(image_file.read()).decode("utf-8")
+                image_data = image_file.read()
+                if len(image_data) == 0:
+                    raise ValueError(f"Empty image file: {image_path}")
+                return base64.b64encode(image_data).decode("utf-8")
         except Exception as e:
-            self.debug_print(f"Error encoding image {image_path}: {str(e)}")
-            raise
+            raise ValueError(f"Failed to encode image {image_path}: {str(e)}")
 
-    def parse_model_response(
-        self, text_response: str
-    ) -> Tuple[str, Dict[str, float], Dict]:
-        """Parse model response with strict probability handling."""
-        probabilities = {"short_clip": 0.0, "long_clip": 0.0, "unimportant": 0.0}
+    def parse_response(self, raw_response: str) -> Tuple[float, str, str]:
+        """Parse three-part response with sequence description."""
+        sequence = ""
+        probability = 0.0
+        explanation = ""
 
-        # Extract probabilities with strict parsing
+        # Split response into lines and clean
+        lines = [line.strip() for line in raw_response.split("\n") if line.strip()]
+
+        if not lines:
+            return 0.0, "No response received", "No explanation provided"
+
+        # Parse the three parts
+        for line in lines:
+            if line.startswith("SEQUENCE:"):
+                sequence = line.split(":", 1)[1].strip()
+            elif line.startswith("HIGHLIGHT_SCORE:"):
+                try:
+                    probability = float(line.split(":", 1)[1].strip())
+                    probability = max(0.0, min(1.0, probability))
+                except (ValueError, IndexError):
+                    probability = 0.0
+            elif line.startswith("EXPLANATION:"):
+                explanation = line.split(":", 1)[1].strip()
+
+        return probability, sequence, explanation
+
+    def analyze_sequence(self, data: tuple[str, List[str]]) -> Dict:
+        """Analyze a single sequence of images."""
+        timestamp, image_files = data
         try:
-            lines = [line.strip() for line in text_response.lower().split("\n")]
-            for line in lines:
-                if ":" not in line:
-                    continue
-                category, value = line.split(":", 1)
-                category = category.strip()
-                if category in probabilities:
-                    # Extract first number and convert to float
-                    try:
-                        prob = float(value.split()[0].strip())
-                        probabilities[category] = prob
-                    except (ValueError, IndexError):
-                        self.debug_print(f"Failed to parse probability for {category}")
-
-            # Validate and normalize probabilities
-            total = sum(probabilities.values())
-            if abs(total - 1.0) > 0.1:  # Allow small deviation from 1.0
-                self.debug_print(f"Probabilities sum to {total}, normalizing")
-                if total > 0:
-                    probabilities = {k: v / total for k, v in probabilities.items()}
-                else:
-                    probabilities = {
-                        "short_clip": 0.0,
-                        "long_clip": 0.0,
-                        "unimportant": 1.0,
-                    }
-
-            # Classification thresholds
-            # Must have both high absolute probability AND significant margin over others
-            max_prob = max(probabilities.values())
-            max_category = max(probabilities.items(), key=lambda x: x[1])[0]
-            second_highest = sorted(probabilities.values())[-2]
-            margin = max_prob - second_highest
-
-            # Strict classification rules
-            if max_category == "short_clip":
-                if max_prob >= 0.6 and margin >= 0.2:
-                    prediction = "short_clip"
-                else:
-                    prediction = "unimportant"
-            elif max_category == "long_clip":
-                if max_prob >= 0.5 and margin >= 0.15:
-                    prediction = "long_clip"
-                else:
-                    prediction = "unimportant"
-            else:
-                prediction = "unimportant"
-
-            analysis_details = {
-                "action_detected": max_prob > 0.3,
-                "key_moment": probabilities["short_clip"] > 0.4,
-                "confidence": max_prob,
-                "margin": margin,
-                "normalized": abs(total - 1.0) > 0.1,
-            }
-
-            return prediction, probabilities, analysis_details
-
-        except Exception as e:
-            self.debug_print(f"Error parsing probabilities: {str(e)}")
-            return (
-                "unimportant",
-                {"short_clip": 0.0, "long_clip": 0.0, "unimportant": 1.0},
-                {
-                    "action_detected": False,
-                    "key_moment": False,
-                    "confidence": 0.0,
-                    "margin": 0.0,
-                    "normalized": False,
-                    "error": str(e),
-                },
+            # Sort image files by frame number
+            image_files = sorted(
+                image_files, key=lambda x: int(x.split("_")[1].split("s")[0])
             )
 
-    def analyze_frame(self, image_path: str, max_retries: int = 3) -> Dict:
-        """Analyze a single frame with retries and enhanced error handling."""
-        for attempt in range(max_retries):
-            try:
-                self.debug_print(
-                    f"\nStarting analysis of frame: {image_path} (attempt {attempt + 1}/{max_retries})"
+            # Extract highlight number
+            highlight_num = int(image_files[0].split("_")[1])
+
+            if self.debug:
+                self.safe_print(
+                    f"\nAnalyzing highlight #{highlight_num} at {timestamp} ({len(image_files)} frames)"
                 )
 
-                encoded_image = self.encode_image(image_path)
-                self.debug_print("Successfully encoded image")
+            # Encode images
+            encoded_images = []
+            for image_file in image_files:
+                full_path = self.images_dir / image_file
+                if not full_path.exists():
+                    raise FileNotFoundError(f"Image not found: {full_path}")
+                encoded = self.encode_image(str(full_path))
+                encoded_images.append(encoded)
 
-                payload = {
-                    "model": self.model,
-                    "prompt": self.get_prompt(),
-                    "images": [encoded_image],
-                    "stream": False,
-                    "temperature": 0.1,
-                }
-                self.debug_print("Prepared API payload")
+            sequence_prompt = f"""You are an expert NBA video analyst with 20+ years experience creating highlight reels. You know most plays are routine - only truly special sequences make the cut.
 
-                self.debug_print(
-                    f"Sending request to Ollama API (attempt {attempt + 1})..."
-                )
-                response = requests.post(
-                    f"{self.api_url}/api/generate", json=payload, timeout=90
-                )
-                response.raise_for_status()
+You're analyzing {len(image_files)} sequential frames. Be precise and only describe what you actually see across ALL the frames..
 
+Example analyses:
+
+"Steal at half court, drives full length, finishes with dunk"
+SEQUENCE: Defender gets steal, takes ball coast-to-coast for powerful dunk over help defender.
+HIGHLIGHT_SCORE: 0.9
+EXPLANATION: Complete exceptional sequence with clear defensive play and strong finish.
+
+"Player crosses over defender, pulls up for jumper"
+SEQUENCE: Guard performs crossover, creates space, shoots jumper but outcome not visible.
+HIGHLIGHT_SCORE: 0.4
+EXPLANATION: Good individual move but cannot confirm result.
+
+"Standard half-court possession"
+SEQUENCE: Team passes ball around perimeter in regular offensive set.
+HIGHLIGHT_SCORE: 0.1
+EXPLANATION: Routine basketball action without exceptional elements.
+
+For this sequence:
+1. Describe exactly what you see happen
+2. Score based on what's visible, not assumptions
+3. Justify score in one sentence
+
+Scoring guide:
+0.9-1.0: Exceptional complete play (e.g. steal→score, poster dunk, etc.)
+0.6-0.8: Very good clear play (e.g. impressive score, impressive defensive play, etc.)
+0.3-0.5: Good play but incomplete (e.g. good score but not visible)
+0.0-0.2: Regular action (most plays)
+
+Respond EXACTLY like examples above:
+SEQUENCE: <one clear sentence describing what happens>
+HIGHLIGHT_SCORE: <0.0-1.0>
+EXPLANATION: <one sentence justification>"""
+
+            payload = {
+                "model": self.model,
+                "prompt": sequence_prompt,
+                "images": encoded_images,
+                "stream": False,
+                "temperature": 0.1,
+            }
+
+            # Make API request with retries
+            max_retries = 3
+            for attempt in range(max_retries):
                 try:
-                    response_json = response.json()
-                    self.debug_print(f"Response JSON: {str(response_json)[:200]}...")
+                    response = requests.post(
+                        f"{self.api_url}/api/generate", json=payload, timeout=180
+                    )
+                    response.raise_for_status()
+                    break
+                except requests.RequestException as e:
+                    if attempt == max_retries - 1:
+                        raise
+                    time.sleep(2**attempt)
 
-                    text_response = response_json.get("response", "")
-                    if not text_response.strip():
-                        raise ValueError("Empty response received")
+            response_json = response.json()
+            raw_response = response_json.get("response", "")
 
-                except json.JSONDecodeError as e:
-                    self.debug_print(f"Failed to decode JSON: {str(e)}")
-                    raise ValueError(f"Invalid JSON response: {str(e)}")
+            # Parse response with sequence description
+            probability, sequence, explanation = self.parse_response(raw_response)
 
-                self.debug_print(f"Raw response: {text_response[:100]}...")
+            if self.debug:
+                self.safe_print(f"Highlight #{highlight_num}:")
+                self.safe_print(f"Sequence: {sequence}")
+                self.safe_print(f"Score: {probability:.2f}")
+                self.safe_print(f"Reason: {explanation}\n")
 
-                prediction, probabilities, analysis_details = self.parse_model_response(
-                    text_response
-                )
+            return {
+                "timestamp": timestamp,
+                "highlight_num": highlight_num,
+                "sequence": sequence,
+                "highlight_probability": probability,
+                "explanation": explanation,
+                "raw_response": raw_response,
+                "num_frames": len(image_files),
+                "status": "success",
+            }
 
-                return {
-                    "highlight_type": prediction,
-                    "probabilities": probabilities,
-                    "analysis_details": analysis_details,
-                    "raw_response": text_response,
-                    "status": "success",
+        except Exception as e:
+            if self.debug:
+                self.safe_print(f"Error processing sequence {timestamp}: {str(e)}")
+            return {
+                "timestamp": timestamp,
+                "highlight_num": highlight_num if "highlight_num" in locals() else 0,
+                "sequence": "",
+                "highlight_probability": 0.0,
+                "explanation": str(e),
+                "raw_response": "",
+                "num_frames": len(image_files) if "image_files" in locals() else 0,
+                "status": "error",
+                "error": str(e),
+            }
+
+    def process_dataset(self, input_json: str, output_json: str):
+        """Process entire dataset of sequences in parallel."""
+        try:
+            with open(input_json, "r") as f:
+                sequences = json.load(f)
+
+            sequence_list = list(sequences.items())
+            results = []
+            start_time = time.time()
+
+            with concurrent.futures.ThreadPoolExecutor(
+                max_workers=self.max_workers
+            ) as executor:
+                future_to_sequence = {
+                    executor.submit(self.analyze_sequence, seq): seq[0]
+                    for seq in sequence_list
                 }
 
-            except (requests.exceptions.RequestException, ValueError) as e:
-                self.debug_print(f"Attempt {attempt + 1} failed: {str(e)}")
-                if attempt < max_retries - 1:
-                    wait_time = (2**attempt) * 2
-                    self.debug_print(f"Waiting {wait_time} seconds before retry...")
-                    time.sleep(wait_time)
-                else:
-                    return self.error_response(
-                        "max_retries_exceeded",
-                        f"Failed after {max_retries} attempts: {str(e)}",
-                    )
+                for future in concurrent.futures.as_completed(future_to_sequence):
+                    timestamp = future_to_sequence[future]
+                    try:
+                        result = future.result()
+                        results.append(result)
+                    except Exception as e:
+                        self.safe_print(
+                            f"Error processing sequence {timestamp}: {str(e)}"
+                        )
+                        results.append(
+                            {
+                                "timestamp": timestamp,
+                                "highlight_num": 0,
+                                "sequence": "",
+                                "highlight_probability": 0.0,
+                                "explanation": str(e),
+                                "raw_response": "",
+                                "num_frames": 0,
+                                "status": "error",
+                                "error": str(e),
+                            }
+                        )
 
-            except Exception as e:
-                self.debug_print(f"Unexpected error: {str(e)}")
-                return self.error_response("error", str(e))
+            processing_time = time.time() - start_time
 
-    def error_response(self, error_type: str, message: str) -> Dict:
-        """Create a standardized error response."""
-        error_response = {
-            "highlight_type": "error",
-            "probabilities": {"short_clip": 0.0, "long_clip": 0.0, "unimportant": 0.0},
-            "analysis_details": {},
-            "raw_response": "",
-            "status": error_type,
-            "error_message": message,
-        }
-        self.debug_print(f"Generated error response: {error_type} - {message}")
-        return error_response
+            # Sort results by highlight number
+            results.sort(key=lambda x: x.get("highlight_num", float("inf")))
 
-    def analyze_sequence(self, input_json: str, output_json: str):
-        """Process a sequence of frames with enhanced error handling."""
-        try:
-            if not Path(input_json).exists():
-                raise FileNotFoundError(f"Input JSON not found: {input_json}")
-
-            with open(input_json, "r") as f:
-                data = json.load(f)
-
-            self.debug_print(f"Loaded {len(data)} frames from {input_json}")
-
-            results = []
-            errors = []
-
-            for i, entry in enumerate(data, 1):
-                timestamp = entry["timestamp"]
-                image_path = entry["image_path"]
-
-                print(f"\nAnalyzing frame {i}/{len(data)} at {timestamp}...")
-
-                if i > 1:
-                    time.sleep(2)  # 2 second delay between frames
-
-                analysis = self.analyze_frame(image_path)
-
-                if analysis["status"] == "success":
-                    print(f"Success - Type: {analysis['highlight_type']}")
-                    print(
-                        "Probabilities:",
-                        ", ".join(
-                            f"{k}: {v:.2%}"
-                            for k, v in analysis["probabilities"].items()
-                        ),
-                    )
-                else:
-                    error_msg = (
-                        f"Error analyzing frame {i}: {analysis['error_message']}"
-                    )
-                    print(error_msg)
-                    errors.append(error_msg)
-
-                results.append(
-                    {"timestamp": timestamp, "image_path": image_path, **analysis}
-                )
+            # Post-process results
+            highlight_summary = {}
+            for result in results:
+                if result["status"] == "success":
+                    highlight_summary[result["highlight_num"]] = {
+                        "score": result["highlight_probability"],
+                        "sequence": result["sequence"],
+                        "frames": result["num_frames"],
+                    }
 
             output = {
                 "metadata": {
-                    "total_frames": len(results),
+                    "total_sequences": len(results),
                     "successful_analyses": sum(
                         1 for r in results if r["status"] == "success"
                     ),
-                    "errors": len(errors),
-                    "error_messages": errors,
-                    "highlight_stats": {
-                        "short_clips": sum(
-                            1 for r in results if r["highlight_type"] == "short_clip"
-                        ),
-                        "long_clips": sum(
-                            1 for r in results if r["highlight_type"] == "long_clip"
-                        ),
-                        "unimportant": sum(
-                            1 for r in results if r["highlight_type"] == "unimportant"
-                        ),
-                    },
+                    "processing_time_seconds": processing_time,
+                    "average_probability": sum(
+                        r["highlight_probability"] for r in results
+                    )
+                    / len(results),
+                    "high_probability_sequences": sum(
+                        1 for r in results if r["highlight_probability"] > 0.7
+                    ),
+                    "timestamp": datetime.now().isoformat(),
                 },
-                "frames": results,
+                "highlight_summary": highlight_summary,
+                "sequences": results,
             }
 
-            self.debug_print(f"Analysis complete. Writing results to {output_json}")
+            # Save results
             output_path = Path(output_json)
             output_path.parent.mkdir(parents=True, exist_ok=True)
-
             with open(output_json, "w") as f:
                 json.dump(output, f, indent=2)
 
-            return results, errors
+            if self.debug:
+                self.safe_print(f"\nAnalysis Complete ({processing_time:.1f}s):")
+                self.safe_print("\nHighlight Summary:")
+                for num, details in highlight_summary.items():
+                    self.safe_print(
+                        f"#{num:2d} ({details['frames']:2d} frames) - {details['score']:.2f}: {details['sequence']}"
+                    )
+
+            return output
 
         except Exception as e:
-            self.debug_print(f"Error in sequence analysis: {str(e)}")
+            self.safe_print(f"Fatal error in process_dataset: {str(e)}")
             raise
 
 
 def main():
-    inspector = HighlightInspector(debug=True)
+    images_dir = "app/data/images"
+    input_json = "app/data/json/image_metadata.json"
+    output_json = "app/data/json/highlight_analysis.json"
+    max_workers = 2
 
-    input_json = "local_storage/frames.json"
-    output_json = "local_storage/highlight_analysis.json"
+    analyzer = HighlightSequenceAnalyzer(
+        images_dir=images_dir, debug=True, max_workers=max_workers
+    )
 
     try:
-        results, errors = inspector.analyze_sequence(input_json, output_json)
-
-        print(f"\nAnalysis Complete - {len(results)} frames processed")
-        print(
-            f"Successful analyses: {sum(1 for r in results if r['status'] == 'success')}"
-        )
-        if errors:
-            print(f"Errors encountered: {len(errors)}")
-            for error in errors:
-                print(f"- {error}")
-
+        results = analyzer.process_dataset(input_json, output_json)
     except Exception as e:
         print(f"Fatal error: {str(e)}")
-        sys.exit(1)
+        exit(1)
 
 
 if __name__ == "__main__":
