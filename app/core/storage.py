@@ -46,16 +46,8 @@ class S3Storage:
         key = f"split/{video_id}/split_audio.mp3"
         return self.upload_file(file_path, key)
 
-    def upload_split_video(self, file_path: str, video_id: str) -> str:
-        key = f"split/{video_id}/split_video.mp4"
-        return self.upload_file(file_path, key)
-
     def download_split_audio(self, video_id: str, destination: str):
         key = f"split/{video_id}/split_audio.mp3"
-        self.download_file(key, destination)
-
-    def download_split_video(self, video_id: str, destination: str):
-        key = f"split/{video_id}/split_video.mp4"
         self.download_file(key, destination)
 
     # Highlights (final highlight reel) functions

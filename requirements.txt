@@ -46,7 +46,6 @@ numpy==2.0.2
 orjson==3.10.12
 packaging==24.2
 pillow==10.4.0
-pillow==11.0.0
 platformdirs==4.3.6
 pooch==1.8.2
 proglog==0.1.10

@@ -4,7 +4,8 @@ import os
 import uuid
 from concurrent.futures import ThreadPoolExecutor
 
-from app.core.extractAudio import extract_audio, extract_video_without_audio
+from app.core.analyzeAudio import shortlist_highlights
+from app.core.extractAudio import extract_audio
 from app.core.storage import S3Storage
 from app.database import SessionLocal
 from app.models.video import Video
@@ -37,12 +38,12 @@ def upload_video(file_path: str) -> str:
     # Generate video ID and paths
     video_id = str(uuid.uuid4())
     raw_video_name = os.path.basename(file_path)
-    raw_video_local = f"local_storage/{raw_video_name}"
-    split_audio_local = f"local_storage/{video_id}_split_audio.m4a"
-    split_video_local = f"local_storage/{video_id}_split_video.mp4"
+    raw_video_local = f"app/data/games/{raw_video_name}"
+    split_audio_local = f"app/data/audios/{video_id}_split_audio.m4a"
 
     # Ensure local_storage directory exists
-    os.makedirs("local_storage", exist_ok=True)
+    os.makedirs("app/data/games", exist_ok=True)
+    os.makedirs("app/data/audios", exist_ok=True)
 
     # Copy video to local_storage
     os.system(f"cp '{file_path}' '{raw_video_local}'")
@@ -59,19 +60,11 @@ def upload_video(file_path: str) -> str:
         logger.info("Uploading audio to S3...")
         return s3.upload_split_audio(split_audio_local, video_id)
 
-    def process_video():
-        """Extract video without audio and upload to S3."""
-        logger.info("Extracting video without audio...")
-        extract_video_without_audio(raw_video_local, split_video_local)
-        logger.info("Uploading video to S3...")
-        return s3.upload_split_video(split_video_local, video_id)
-
     # Run tasks in parallel
     with ThreadPoolExecutor() as executor:
         futures = {
             "raw": executor.submit(upload_raw),
             "audio": executor.submit(process_audio),
-            "video": executor.submit(process_video),
         }
 
         # Collect results
@@ -137,6 +130,8 @@ if __name__ == "__main__":
         elif args.action == "shortlist":
             if not args.id:
                 raise ValueError("--id required for shortlisting highlights")
+
+            shortlist_highlights(args.id)
             print(f"Shortlisted highlights for video ID: {args.id}")
 
         elif args.action == "create":

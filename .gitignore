@@ -172,9 +172,15 @@ app/data/highlights/*
 # PyCharm
 #.idea/
 
-
 # Local storage
-local_storage/
+# System files
 .DS_Store
 app/.DS_Store
 app/data/.DS_Store
+
+# Local storage
+local_storage/
+
+# Video files
+app/data/games/*.mp4
+app/data/highlights/*.mp4
