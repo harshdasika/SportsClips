@@ -172,3 +172,4 @@ app/media/highlights/*
 
 # PyCharm
 #.idea/
+.DS_Store
