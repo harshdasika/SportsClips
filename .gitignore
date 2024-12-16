@@ -154,9 +154,21 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+# Ignore contents of media folders but not the folders themselves
+app/media/images/*
+!app/media/images/.gitkeep
+
+app/media/videos/*
+!app/media/videos/.gitkeep
+
+app/media/audios/*
+!app/media/audios/.gitkeep
+
+app/media/games/*
+!app/media/games/.gitkeep
+
+app/media/highlights/*
+!app/media/highlights/.gitkeep
+
 # PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/

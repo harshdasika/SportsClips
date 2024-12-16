@@ -190,6 +190,39 @@ def merge_close_segments(segments: List[Tuple[float, float]], gap_threshold: flo
 
 
 if __name__ == "__main__":
+    # Resolve the base directory of the project dynamically
+    base_dir = os.path.abspath(os.path.dirname(__file__))  # Directory of the current script
+    project_dir = os.path.join(base_dir, "../../")          # Project root directory
+
+    # Define file paths relative to the project directory
+    video_file = os.path.join(project_dir, "app/media/games/celtics-knicks.mp4")
+    mp3_file = os.path.join(project_dir, "app/media/audios/extractedAudio.mp3")
+    highlights_dir = os.path.join(project_dir, "app/media/highlights/")
+
+    # Ensure all necessary directories exist
+    os.makedirs(os.path.dirname(mp3_file), exist_ok=True)
+    os.makedirs(highlights_dir, exist_ok=True)
+
+    # Step 1: Extract audio as MP3
+    extract_audio_as_mp3(video_file, mp3_file)
+
+    # Step 2: Detect exciting moments
+    detector = AudioExcitementDetector()
+    exciting_moments = detector.detect_excitement(mp3_file)
+
+    # Step 3: Merge close segments
+    merged_moments = merge_close_segments(exciting_moments, gap_threshold=4.0)
+
+    # Step 4: Print merged timestamps
+    print(f"Found {len(merged_moments)} merged exciting moments:")
+    for start, end in merged_moments:
+        print(f"Excitement from {start:.1f}s to {end:.1f}s")
+
+    # Step 5: Extract highlight clips with buffer
+    extract_highlight_clips(video_file, merged_moments, highlights_dir)
+
+"""
+if __name__ == "__main__":
     # File paths
     video_file = "/Users/harshdasika/Desktop/celtics-knicks.mp4"
     mp3_file = "/Users/harshdasika/Desktop/extractedAudio.mp3"
@@ -209,6 +242,4 @@ if __name__ == "__main__":
     print(f"Found {len(merged_moments)} merged exciting moments:")
     for start, end in merged_moments:
         print(f"Excitement from {start:.1f}s to {end:.1f}s")
-
-    # Step 5: Extract highlight clips with buffer
-    extract_highlight_clips(video_file, merged_moments, highlights_dir)
+"""
