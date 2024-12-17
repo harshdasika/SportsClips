@@ -1,39 +1,26 @@
 import json
+import logging
 import os
 import subprocess
-from typing import Dict, List
-
-from moviepy.video.io.VideoFileClip import VideoFileClip
+from pathlib import Path
+from typing import Dict, List, Optional
 
 
 def read_highlight_metadata(file_path: str) -> List[Dict]:
     """
     Read the highlight metadata JSON file.
-
-    Args:
-        file_path (str): Path to the highlight_metadata.json file.
-
-    Returns:
-        List[Dict]: A list of dictionaries containing start_time and highlight_file.
     """
     try:
         with open(file_path, "r") as f:
-            data = json.load(f)
-        return data
+            return json.load(f)
     except FileNotFoundError:
-        print(f"Error: Metadata file not found at {file_path}")
+        logging.error(f"Error: Metadata file not found at {file_path}")
         return []
 
 
 def get_video_duration_ffprobe(video_file: str) -> float:
     """
     Get the duration of a video file using ffprobe.
-
-    Args:
-        video_file (str): Path to the video file.
-
-    Returns:
-        float: Duration of the video in seconds.
     """
     try:
         result = subprocess.run(
@@ -50,94 +37,106 @@ def get_video_duration_ffprobe(video_file: str) -> float:
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
+            timeout=30,  # Add timeout
         )
         duration_str = result.stdout.strip()
-        if duration_str:
-            return float(duration_str)
-        else:
-            print(f"ffprobe returned empty duration for {video_file}")
-            return 0.0
-    except Exception as e:
-        print(f"Error getting duration for {video_file} using ffprobe: {e}")
+        return float(duration_str) if duration_str else 0.0
+    except (subprocess.TimeoutExpired, subprocess.CalledProcessError, ValueError) as e:
+        logging.error(f"Error getting duration for {video_file}: {e}")
         return 0.0
 
 
-def take_snapshots(
-    video_file: str, output_dir: str, duration: float, clip_index: int
+def take_snapshots_efficient(
+    video_file: str,
+    output_dir: str,
+    duration: float,
+    clip_index: int,
+    interval: float = 1.0,
 ) -> List[str]:
     """
-    Take snapshots from a video file every 1 second.
+    Take snapshots from a video file at specified intervals using a single FFmpeg process.
 
     Args:
-        video_file (str): Path to the video file.
-        output_dir (str): Directory to save the snapshots.
-        duration (float): Duration of the video in seconds.
-        clip_index (int): Index of the highlight clip (for unique filenames).
-
-    Returns:
-        List[str]: List of snapshot filenames.
+        video_file: Path to the video file
+        output_dir: Directory to save the snapshots
+        duration: Duration of the video in seconds
+        clip_index: Index of the highlight clip
+        interval: Time interval between frames (default: 1.0 second)
     """
     os.makedirs(output_dir, exist_ok=True)
-    snapshots = []
-    for second in range(int(duration)):
-        output_file = os.path.join(
-            output_dir, f"highlight_{clip_index}_{second + 1}s.jpg"
+    output_pattern = os.path.join(output_dir, f"highlight_{clip_index}_%d.jpg")
+
+    # Calculate frame rate based on interval
+    fps = f"1/{interval}"
+
+    command = [
+        "ffmpeg",
+        "-i",
+        video_file,
+        "-vf",
+        f"fps={fps}",  # Set output frame rate
+        "-frame_pts",
+        "1",  # Add presentation timestamp
+        "-vsync",
+        "0",  # Prevent frame dropping
+        "-q:v",
+        "2",  # High quality (2-31, lower is better)
+        output_pattern,
+    ]
+
+    try:
+        # Run FFmpeg with timeout
+        process = subprocess.run(
+            command,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            timeout=max(30, duration * 2),  # Adaptive timeout based on duration
         )
-        command = [
-            "ffmpeg",
-            "-i",
-            video_file,
-            "-ss",
-            str(second),
-            "-vframes",
-            "1",
-            output_file,
-        ]
-        subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        print(f"Saved snapshot: {output_file}")
-        snapshots.append(os.path.basename(output_file))
-    return snapshots
+
+        if process.returncode != 0:
+            logging.error(f"FFmpeg error: {process.stderr.decode()}")
+            return []
+
+        # Get list of generated files
+        snapshots = []
+        frame_num = 1
+        while True:
+            filename = f"highlight_{clip_index}_{frame_num}.jpg"
+            if not os.path.exists(os.path.join(output_dir, filename)):
+                break
+            snapshots.append(filename)
+            frame_num += 1
+
+        logging.info(f"Generated {len(snapshots)} snapshots for clip {clip_index}")
+        return snapshots
+
+    except subprocess.TimeoutExpired:
+        logging.error(f"Timeout while processing {video_file}")
+        return []
+    except Exception as e:
+        logging.error(f"Error processing {video_file}: {e}")
+        return []
 
 
-def save_image_metadata(metadata: Dict[str, List[str]], output_file: str) -> None:
-    """
-    Save the image metadata to a JSON file.
-
-    Args:
-        metadata (Dict[str, List[str]]): Dictionary containing image metadata.
-        output_file (str): Path to save the JSON file.
-    """
-    os.makedirs(os.path.dirname(output_file), exist_ok=True)
-    with open(output_file, "w") as f:
-        json.dump(metadata, f, indent=4)
-    print(f"Image metadata saved to {output_file}")
-
-
-def extract_frames(highlight_metadata_file):
+def extract_frames(highlight_metadata_file: str) -> bool:
     """
     Extract frames from highlight clips and generate corresponding metadata.
-
-    Args:
-        highlight_metadata_file (str): Path to the JSON file containing highlight metadata
-
-    Returns:
-        bool: True if processing was successful, False otherwise
     """
     try:
-        # Get base directory (assuming this function is in the same script)
-        base_dir = os.path.abspath(os.path.dirname(__file__))
-        project_dir = os.path.join(base_dir, "../../")
+        # Setup paths
+        base_dir = Path(__file__).parent
+        project_dir = base_dir.parent.parent
+        images_dir = project_dir / "app/data/images"
+        output_metadata_file = project_dir / "app/data/json/image_metadata.json"
 
-        # Define paths
-        images_dir = os.path.join(project_dir, "app/data/images/")
-        output_metadata_file = os.path.join(
-            project_dir, "app/data/json/image_metadata.json"
-        )
+        # Ensure directories exist
+        images_dir.mkdir(parents=True, exist_ok=True)
+        output_metadata_file.parent.mkdir(parents=True, exist_ok=True)
 
         # Read highlight metadata
         highlight_metadata = read_highlight_metadata(highlight_metadata_file)
         if not highlight_metadata:
-            print("No highlight metadata to process.")
+            logging.warning("No highlight metadata to process.")
             return False
 
         image_metadata = {}
@@ -145,72 +144,42 @@ def extract_frames(highlight_metadata_file):
         # Process each highlight clip
         for clip_index, entry in enumerate(highlight_metadata, 1):
             start_time = entry["start_time"]
-            highlight_file = os.path.join(
-                project_dir, "app/data/highlights/", entry["highlight_file"]
+            highlight_file = (
+                project_dir / "app/data/highlights" / entry["highlight_file"]
             )
 
-            # Get video duration
-            duration = get_video_duration_ffprobe(highlight_file)
-            if duration == 0:
-                print(f"Skipping {highlight_file} due to error in fetching duration.")
+            if not highlight_file.exists():
+                logging.error(f"Highlight file not found: {highlight_file}")
                 continue
 
-            # Take snapshots
-            snapshots = take_snapshots(highlight_file, images_dir, duration, clip_index)
+            # Get video duration
+            duration = get_video_duration_ffprobe(str(highlight_file))
+            if duration == 0:
+                logging.error(f"Invalid duration for {highlight_file}")
+                continue
 
-            # Add to image metadata
-            image_metadata[str(start_time)] = snapshots
+            # Take snapshots using efficient method
+            snapshots = take_snapshots_efficient(
+                str(highlight_file), str(images_dir), duration, clip_index
+            )
 
-        # Save image metadata to JSON
-        save_image_metadata(image_metadata, output_metadata_file)
+            if snapshots:
+                image_metadata[str(start_time)] = snapshots
+
+        # Save metadata
+        with output_metadata_file.open("w") as f:
+            json.dump(image_metadata, f, indent=4)
+
+        logging.info(f"Image metadata saved to {output_metadata_file}")
         return True
 
     except Exception as e:
-        print(f"Error processing frames: {str(e)}")
+        logging.error(f"Error in extract_frames: {e}")
         return False
 
 
 if __name__ == "__main__":
-    # File paths
-    base_dir = os.path.abspath(
-        os.path.dirname(__file__)
-    )  # Directory of the current script
-    project_dir = os.path.join(base_dir, "../../")  # Project root directory
-
-    highlight_metadata_file = os.path.join(
-        project_dir, "app/data/json/highlight_metadata.json"
+    logging.basicConfig(
+        level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
     )
-    images_dir = os.path.join(project_dir, "app/data/images/")
-    output_metadata_file = os.path.join(
-        project_dir, "app/data/json/image_metadata.json"
-    )
-
-    # Read highlight metadata
-    highlight_metadata = read_highlight_metadata(highlight_metadata_file)
-    if not highlight_metadata:
-        print("No highlight metadata to process.")
-        exit(1)
-
-    image_metadata = {}
-
-    # Process each highlight clip
-    for clip_index, entry in enumerate(highlight_metadata, 1):
-        start_time = entry["start_time"]
-        highlight_file = os.path.join(
-            project_dir, "app/data/highlights/", entry["highlight_file"]
-        )
-
-        # Get video duration
-        duration = get_video_duration_ffprobe(highlight_file)
-        if duration == 0:
-            print(f"Skipping {highlight_file} due to error in fetching duration.")
-            continue
-
-        # Take snapshots
-        snapshots = take_snapshots(highlight_file, images_dir, duration, clip_index)
-
-        # Add to image metadata
-        image_metadata[str(start_time)] = snapshots
-
-    # Save image metadata to JSON
-    save_image_metadata(image_metadata, output_metadata_file)
+    extract_frames("path/to/your/highlight_metadata.json")
